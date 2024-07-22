@@ -5,6 +5,10 @@
 /SydneySQLBACKUPS/
 /Credis/
 
+#node modules
+wp-content/themes/proacto-theme/assets/node_modules/
+
+
 .bash_history
 
 #IDE's

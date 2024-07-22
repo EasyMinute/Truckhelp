@@ -203,6 +203,10 @@ img {
   color: #D3D0D0;
 }
 
+section {
+  overflow-x: hidden;
+}
+
 .button {
   display: -webkit-box;
   display: -ms-flexbox;
