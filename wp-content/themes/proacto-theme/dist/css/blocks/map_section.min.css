@@ -1,0 +1,107 @@
+/*!*********************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./node_modules/sass-loader/dist/cjs.js!./scss/blocks/map_section.scss ***!
+  \*********************************************************************************************************************************************************************************************/
+.map_section {
+  padding: 72px 0;
+}
+@media screen and (max-width: 980px) {
+  .map_section {
+    padding: 48px 0;
+  }
+}
+.map_section .headline {
+  color: #FFFFFF;
+  margin-bottom: 36px;
+}
+@media screen and (max-width: 980px) {
+  .map_section .headline {
+    margin-bottom: 24px;
+  }
+}
+.map_section__wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+@media screen and (max-width: 980px) {
+  .map_section__wrap {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+.map_section__cards {
+  width: 40%;
+  max-width: 541px;
+  margin-right: 48px;
+}
+@media screen and (max-width: 980px) {
+  .map_section__cards {
+    width: 100%;
+    max-width: 100%;
+    margin-right: 0;
+  }
+}
+.map_section__image {
+  width: 60%;
+  max-width: calc(100% - 590px);
+}
+@media screen and (max-width: 980px) {
+  .map_section__image {
+    width: 100%;
+    max-width: 100%;
+    -webkit-box-ordinal-group: 0;
+        -ms-flex-order: -1;
+            order: -1;
+    margin-bottom: 24px;
+  }
+}
+.map_section__image img {
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: center;
+     object-position: center;
+}
+
+.map_service_card {
+  width: 100%;
+  border: 1px solid #7B7272;
+  background-color: #111010;
+  border-radius: 16px;
+  margin-bottom: 16px;
+  padding: 20px;
+}
+.map_service_card__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin-bottom: 12px;
+}
+.map_service_card__row svg {
+  margin-right: 8px;
+}
+.map_service_card__row p {
+  color: #FFFFFF;
+}
+.map_service_card__row p span {
+  color: #A7A0A0;
+}
+.map_service_card .arrow-link {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-top: 16px;
+}
+.map_service_card .arrow-link:after {
+  margin-left: 12px;
+  width: 32px;
+  height: 32px;
+}

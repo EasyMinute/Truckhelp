@@ -1,0 +1,110 @@
+@import "../generals/colors";
+
+main.single-post{
+  padding: 72px 0;
+
+  @media screen and (max-width: 980px){
+    padding: 48px 0;
+  }
+}
+.single-post {
+  &__wrap {
+    display: flex;
+    align-items: flex-start;
+    @media screen and (max-width: 980px){
+      flex-direction: column;
+    }
+  }
+
+  &__content {
+    width: 100%;
+    @media screen and (max-width: 980px){
+      margin-bottom: 24px;
+    }
+
+    .single-post_date {
+      color: $accent-50;
+      margin-bottom: 12px;
+    }
+
+    .single-post_title {
+      margin-bottom: 16px;
+      color: $white;
+    }
+
+    p {
+      width: 100%;
+      font-family: Roboto, sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      text-align: left;
+      margin-bottom: 16px;
+      color: $primary-10;
+    }
+
+    img {
+      width: 100%;
+      margin-bottom: 16px;
+      border-radius: 16px;
+      overflow: hidden;
+    }
+  }
+
+  &__related {
+    width: 100%;
+    max-width: 369px;
+    margin-left: 76px;
+    @media screen and (max-width: 980px){
+      margin-left: 0;
+      max-width: 100%;
+    }
+
+    .related-posts {
+      &_title {
+        color: $white;
+        margin-bottom: 24px;
+      }
+
+      &__list {
+        .related-card {
+          margin-bottom: 16px;
+        }
+      }
+    }
+  }
+}
+
+.related-card {
+  display: flex;
+  width: 100%;
+  position: relative;
+
+  img {
+    width: 100%;
+    max-width: 137px;
+    height: 115px;
+    margin-right: 8px;
+    object-fit: cover;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  &__texts {
+    .related-card_date {
+      color: $accent-50;
+      margin-bottom: 8px;
+    }
+
+    .related-card_title {
+      color: $white;
+      transition: all .5s;
+    }
+  }
+
+  &:hover {
+    .related-card_title {
+      color: $accent-50;
+    }
+  }
+}

@@ -1,0 +1,81 @@
+@import "../generals/colors";
+
+.services_grid {
+  padding: 72px 0;
+  @media screen and (max-width: 920px){
+    padding: 48px 0;
+  }
+
+  .headline {
+    margin-bottom: 36px;
+    color: $white;
+    @media screen and (max-width: 920px) {
+      margin-bottom: 24px;
+    }
+  }
+
+  .services_grid__wrap {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+
+    @media screen and (max-width: 1024px){
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @media screen and (max-width: 920px){
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media screen and (max-width: 576px){
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  .service_card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+}
+
+//Service card general style
+.service_card {
+  background-color: $primary-70;
+  border: 1px solid $stroke;
+  border-radius: 16px;
+  padding: 32px 24px;
+  position: relative;
+  transition: all .5s;
+
+  &:hover {
+    background-color: $accent-50;
+
+    .arrow-link::after {
+      background-color: $accent-30;
+    }
+  }
+
+  &__title {
+    margin-bottom: 36px;
+    color: $white;
+  }
+
+  img {
+    width: 108px;
+    height: 108px;
+    object-fit: contain;
+    margin-bottom: 56px;
+  }
+
+  .arrow-link {
+    color: $white;
+    margin: auto auto 0 auto;
+    span {
+      font-size: 22px;
+      font-weight: 400;
+      b {
+        font-size: 24px;
+        font-weight: 500;
+      }
+    }
+  }
+}

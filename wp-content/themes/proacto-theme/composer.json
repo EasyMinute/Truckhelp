@@ -1,0 +1,9 @@
+{
+  "name": "proacto/proacto-theme",
+  "version": "1.0.0",
+  "type": "wordpress-theme",
+  "require": {
+    "composer/installers": "~1.0"
+  },
+  "description": "Default theme for development in Proacto"
+}

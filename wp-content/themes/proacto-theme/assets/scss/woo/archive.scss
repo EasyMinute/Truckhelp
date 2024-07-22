@@ -1,0 +1,91 @@
+@import "../generals/colors";
+
+.proacto-shop-header {
+  padding: 24px 0;
+
+  .headline {
+    color: $white;
+  }
+}
+
+.products-grid {
+  padding: 12px 0 48px;
+
+  @media screen and (max-width: 980px){
+    padding: 12px 0;
+  }
+
+  &__wrap {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  &__filter {
+    width: fit-content;
+    max-width: calc(100% / 3);
+    margin-right: 16px;
+  }
+
+  &__grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+
+    @media screen and (max-width: 920px){
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media screen and (max-width: 576px){
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    .product-card {
+      display: flex;
+      height: 100%;
+    }
+  }
+}
+
+.product-card {
+  flex-direction: column;
+  border-radius: 16px;
+  border: 1px solid $primary-30;
+  position: relative;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  &__texts {
+    background-color: $primary-70;
+    padding: 16px 16px 24px 16px;
+  }
+
+  &__title {
+    margin-bottom: 52px;
+    color: $white;
+  }
+
+  &__buttons {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: flex-end;
+
+
+    .added_to_cart {
+      display: none !important;
+    }
+
+    &_price {
+      span:first-child {
+        color: $primary-20;
+      }
+    }
+  }
+}

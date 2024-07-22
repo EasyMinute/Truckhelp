@@ -1,0 +1,125 @@
+@import "../generals/colors";
+
+.footer {
+  border-top: 1px solid $primary-30;
+  background-color: $primary-50;
+
+  &__wrap {
+    padding: 32px 0;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    @media screen and (max-width: 980px){
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      text-align: center;
+    }
+  }
+
+  &__visuals {
+    width: 100%;
+    max-width: 262px;
+    margin-right: 24px;
+    @media screen and (max-width: 980px){
+      margin-right: 0;
+      margin-bottom: 24px;
+    }
+
+    &_logo {
+      width: 200px;
+      margin-bottom: 24px;
+      @media screen and (max-width: 980px){
+        margin: auto auto 24px;
+      }
+
+      img {
+        width: 100%;
+      }
+    }
+
+    &_menu {
+      li {
+        margin-bottom: 8px;
+
+        a {
+          font-family: Roboto, sans-serif;
+          font-size: 14px;
+          font-weight: 400;
+          line-height: 20px;
+          color: $light-grey;
+        }
+      }
+    }
+
+    &_payments {
+      p {
+        color: $light-grey;
+        margin-bottom: 10px;
+      }
+
+      .payment_cards {
+        display: flex;
+        align-items: center;
+        @media screen and (max-width: 980px){
+          justify-content: center;
+        }
+
+        img {
+          width: 43px;
+          height: 26px;
+          object-fit: cover;
+          margin-right: 4px;
+        }
+      }
+    }
+  }
+
+  &__main {
+    @media screen and (max-width: 980px){
+      margin-bottom: 32px;
+    }
+    li {
+      margin-bottom: 12px;
+
+      a {
+        font-family: Roboto, sans-serif;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 28px;
+        text-align: left;
+        color: $white;
+      }
+    }
+  }
+
+  &__services {
+    @media screen and (max-width: 980px){
+      margin-bottom: 32px;
+    }
+    p {
+      color: $white;
+      margin-bottom: 8px;
+    }
+
+    ul {
+      li{
+        margin-bottom: 8px;
+        a {
+          color: $light-grey;
+        }
+      }
+    }
+  }
+
+  &__copyright {
+    padding: 16px 0;
+    border-top: 1px solid $primary-30;
+
+    p {
+      color: $primary-10;
+    }
+  }
+
+}

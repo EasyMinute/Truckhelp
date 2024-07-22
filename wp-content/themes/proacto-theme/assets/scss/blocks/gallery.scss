@@ -1,0 +1,45 @@
+@import "../generals/colors";
+
+.gallery {
+  padding: 72px 0;
+
+  @media screen and (max-width: 980px){
+    padding: 48px 0;
+  }
+
+  .container {
+    overflow: visible;
+  }
+
+  .headline {
+    color: $white;
+    margin-bottom: 36px;
+    @media screen and (max-width: 980px){
+      margin-bottom: 24px;
+    }
+  }
+
+  .gallery_slider {
+    position: relative;
+
+    &__slide {
+      &-wrap {
+        width: 100%;
+        padding-top: 67%;
+        position: relative;
+        border-radius: 16px;
+        overflow: hidden;
+        border: 1px solid $primary-10;
+
+        img {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+}

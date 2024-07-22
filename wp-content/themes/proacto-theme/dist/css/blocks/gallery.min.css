@@ -1,0 +1,43 @@
+/*!*****************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./node_modules/sass-loader/dist/cjs.js!./scss/blocks/gallery.scss ***!
+  \*****************************************************************************************************************************************************************************************/
+.gallery {
+  padding: 72px 0;
+}
+@media screen and (max-width: 980px) {
+  .gallery {
+    padding: 48px 0;
+  }
+}
+.gallery .container {
+  overflow: visible;
+}
+.gallery .headline {
+  color: #FFFFFF;
+  margin-bottom: 36px;
+}
+@media screen and (max-width: 980px) {
+  .gallery .headline {
+    margin-bottom: 24px;
+  }
+}
+.gallery .gallery_slider {
+  position: relative;
+}
+.gallery .gallery_slider__slide-wrap {
+  width: 100%;
+  padding-top: 67%;
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid #D3D0D0;
+}
+.gallery .gallery_slider__slide-wrap img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+}

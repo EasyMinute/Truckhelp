@@ -1,0 +1,91 @@
+/*!*********************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./node_modules/sass-loader/dist/cjs.js!./scss/blocks/latest_news.scss ***!
+  \*********************************************************************************************************************************************************************************************/
+.latest_news {
+  padding: 72px 0;
+}
+@media screen and (max-width: 980px) {
+  .latest_news {
+    padding: 48px 0;
+  }
+}
+.latest_news__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 36px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.latest_news__header .headline {
+  color: #FFFFFF;
+}
+.latest_news__wrap {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+@media screen and (max-width: 1024px) {
+  .latest_news__wrap {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (max-width: 920px) {
+  .latest_news__wrap {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 576px) {
+  .latest_news__wrap {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+.latest_news__wrap .news_card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100%;
+}
+
+.news_card {
+  position: relative;
+}
+.news_card img {
+  width: 100%;
+  border-radius: 16px 16px 0 0;
+  overflow: hidden;
+}
+.news_card__texts {
+  padding: 16px;
+  border-radius: 0 0 16px 16px;
+  background-color: #111010;
+  border: 1px solid #262626;
+}
+.news_card__texts .date {
+  margin-bottom: 8px;
+  color: #B52929;
+}
+.news_card__texts .title {
+  margin-bottom: 8px;
+  color: #FFFFFF;
+}
+.news_card__texts .excerpt {
+  margin-bottom: 16px;
+  color: #D3D0D0;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* number of lines to show */
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.news_card__texts .button {
+  margin: auto auto 0 0;
+}

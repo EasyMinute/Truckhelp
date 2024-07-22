@@ -1,0 +1,95 @@
+@import "../generals/colors";
+
+.map_section {
+  padding: 72px 0;
+
+  @media screen and (max-width: 980px){
+    padding: 48px 0;
+  }
+
+  .headline {
+    color: $white;
+    margin-bottom: 36px;
+    @media screen and (max-width: 980px){
+      margin-bottom: 24px;
+    }
+  }
+
+
+  &__wrap {
+    display: flex;
+    align-items: center;
+
+    @media screen and (max-width: 980px){
+      flex-direction: column;
+    }
+  }
+
+  &__cards {
+    width: 40%;
+    max-width: 541px;
+    margin-right: 48px;
+
+    @media screen and (max-width: 980px){
+      width: 100%;
+      max-width: 100%;
+      margin-right: 0;
+    }
+  }
+
+  &__image {
+    width: 60%;
+    max-width: calc(100% - 590px);
+
+    @media screen and (max-width: 980px){
+      width: 100%;
+      max-width: 100%;
+      order: -1;
+      margin-bottom: 24px;
+    }
+
+    img {
+      width: 100%;
+      object-fit: contain;
+      object-position: center;
+    }
+  }
+}
+
+.map_service_card {
+  width: 100%;
+  border: 1px solid $primary-30;
+  background-color: $primary-70;
+  border-radius: 16px;
+  margin-bottom: 16px;
+  padding: 20px;
+
+  &__row {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 12px;
+
+    svg {
+      margin-right: 8px;
+    }
+
+    p {
+      color: $white;
+
+      span {
+        color: $primary-20;
+      }
+    }
+  }
+
+  .arrow-link {
+    width: fit-content;
+    margin-top: 16px;
+
+    &:after {
+      margin-left: 12px;
+      width: 32px;
+      height: 32px;
+    }
+  }
+}

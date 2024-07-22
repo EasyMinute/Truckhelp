@@ -1,0 +1,57 @@
+/*!**********************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./node_modules/sass-loader/dist/cjs.js!./scss/blocks/contact_form.scss ***!
+  \**********************************************************************************************************************************************************************************************/
+.contact_form {
+  padding: 72px 0;
+}
+@media screen and (max-width: 980px) {
+  .contact_form {
+    padding: 48px 0;
+  }
+}
+.contact_form__wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.contact_form__texts {
+  width: 100%;
+  max-width: calc(100% - 596px);
+  padding-right: 64px;
+}
+@media screen and (max-width: 980px) {
+  .contact_form__texts {
+    max-width: 100%;
+    margin-bottom: 24px;
+  }
+}
+.contact_form__texts .headline {
+  color: #FFFFFF;
+  margin-bottom: 16px;
+}
+.contact_form__texts .body {
+  color: #D3D0D0;
+}
+.contact_form__form {
+  width: 100%;
+  max-width: 596px;
+  padding: 40px 64px;
+  border-radius: 16px;
+  border: 1px solid #D3D0D0;
+  background-color: #111010;
+}
+@media screen and (max-width: 980px) {
+  .contact_form__form {
+    max-width: 100%;
+    padding: 24px;
+  }
+}
+.contact_form__form-title {
+  color: #FFFFFF;
+  margin-bottom: 24px;
+}

@@ -1,0 +1,52 @@
+@import "../generals/colors";
+
+.contact_form {
+  padding: 72px 0;
+
+  @media screen and (max-width: 980px) {
+    padding: 48px 0;
+  }
+
+  &__wrap {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  &__texts {
+    width: 100%;
+    max-width: calc(100% - 596px);
+    padding-right: 64px;
+    @media screen and (max-width: 980px) {
+      max-width: 100%;
+      margin-bottom: 24px;
+    }
+
+    .headline {
+      color: $white;
+      margin-bottom: 16px;
+    }
+
+    .body {
+      color: $primary-10;
+    }
+  }
+
+  &__form {
+    width: 100%;
+    max-width: 596px;
+    padding: 40px 64px;
+    border-radius: 16px;
+    border: 1px solid $primary-10;
+    background-color: $primary-70;
+    @media screen and (max-width: 980px) {
+      max-width: 100%;
+      padding: 24px;
+    }
+
+    &-title {
+      color: $white;
+      margin-bottom: 24px;
+    }
+  }
+}

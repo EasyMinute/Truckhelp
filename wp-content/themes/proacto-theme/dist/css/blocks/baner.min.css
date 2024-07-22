@@ -1,0 +1,91 @@
+/*!***************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./node_modules/sass-loader/dist/cjs.js!./scss/blocks/baner.scss ***!
+  \***************************************************************************************************************************************************************************************/
+.baner {
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+}
+.baner__wrap {
+  height: calc(100vh - 96px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-bottom: 64px;
+}
+@media screen and (max-width: 980px) {
+  .baner__wrap {
+    height: auto;
+    padding: 64px 0;
+  }
+}
+.baner__wrap * {
+  color: #FFFFFF;
+}
+.baner__texts {
+  max-width: 621px;
+  margin: auto 0;
+}
+@media screen and (max-width: 980px) {
+  .baner__texts {
+    margin-bottom: 80px;
+  }
+}
+.baner__texts .title {
+  margin-bottom: 16px;
+}
+.baner__texts .text {
+  margin-bottom: 24px;
+}
+.baner__offices {
+  margin: auto 0 0 0;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+@media screen and (max-width: 980px) {
+  .baner__offices {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+.baner__offices li {
+  width: 30%;
+}
+@media screen and (max-width: 980px) {
+  .baner__offices li {
+    width: 100%;
+    margin-bottom: 24px;
+  }
+}
+.baner__offices li p {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.baner__offices li p:first-child {
+  margin-bottom: 6px;
+}
+.baner__offices li p svg {
+  margin-right: 4px;
+}

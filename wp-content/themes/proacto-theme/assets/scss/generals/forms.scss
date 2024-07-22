@@ -1,0 +1,65 @@
+@import "../generals/colors";
+
+.wpcf7 {
+  .wpcf7-form-control-wrap {
+    display: block;
+    width: 100%;
+
+    label {
+      font-family: Roboto, sans-serif;
+      font-size: 13px;
+      font-weight: 400;
+      line-height: 16px;
+      text-align: left;
+      color: $primary-30;
+    }
+
+    .wpcf7-checkbox {
+      .wpcf7-list-item {
+        label {
+          display: flex;
+
+          input {
+            margin-right: 8px;
+          }
+
+          .wpcf7-list-item-label {
+            max-width: calc(100% - 32px);
+          }
+        }
+      }
+    }
+  }
+}
+
+input, textarea {
+  display: block;
+  width: 100%;
+  padding: 10px 15px;
+  background-color: $primary-70;
+  border: 1px solid $primary-30;
+  border-radius: 20px;
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: left;
+  color: $white;
+
+  &:focus {
+    border-color: $white;
+
+  }
+
+  &[type='checkbox'] {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+  }
+  &[type='radio'] {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+  }
+
+}

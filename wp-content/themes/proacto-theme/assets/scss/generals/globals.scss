@@ -1,0 +1,18 @@
+body {
+  background-color: $primary-50;
+}
+main {
+  min-height: calc(100vh - 442px);
+}
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+}
+
+* {
+  box-sizing: border-box;
+  color: $primary-10;
+}

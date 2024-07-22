@@ -1,0 +1,85 @@
+@import "colors";
+
+.pr-popup{
+  display: flex;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background: #4B4646A3;
+  align-items: center;
+  justify-content: center;
+  z-index: 222;
+  visibility: hidden;
+  opacity: 0;
+  transition: all .5s;
+
+  &__wrap {
+    width: fit-content;
+    min-width: 560px;
+    max-width: calc(100% - 48px);
+    position: relative;
+    padding: 32px;
+    background-color: $white;
+    border-radius: 24px;
+    transform: translateY(-200vh);
+    transition: all .5s;
+
+    @media screen and (max-width: 980px) {
+      min-width: unset;
+    }
+
+    .title {
+      margin-bottom: 16px;
+      color: $primary-50;
+    }
+
+    .text {
+      color: $primary-50;
+      margin-bottom: 24px;
+    }
+
+    &-buttons {
+      display: flex;
+      align-items: center;
+      @media screen and (max-width: 980px) {
+        flex-direction: column;
+      }
+
+      .button {
+        @media screen and (max-width: 980px) {
+          width: 100%;
+        }
+      }
+
+      .primary {
+        margin-right: 8px;
+        @media screen and (max-width: 980px) {
+          margin-bottom: 8px;
+          margin-right: 0;
+        }
+
+        span {
+          color: $white;
+          margin-left: 8px;
+        }
+      }
+    }
+  }
+
+  .close {
+    position: absolute;
+    top: 32px;
+    right: 32px;
+  }
+
+  &.opened {
+    visibility: visible;
+    opacity: 1;
+
+    .pr-popup__wrap {
+      transform: translateY(0);
+    }
+  }
+}

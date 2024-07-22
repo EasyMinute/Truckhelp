@@ -1,0 +1,57 @@
+/*!*********************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./node_modules/sass-loader/dist/cjs.js!./scss/blocks/price_table.scss ***!
+  \*********************************************************************************************************************************************************************************************/
+.price_table {
+  padding: 48px 0 72px 0;
+}
+@media screen and (max-width: 980px) {
+  .price_table {
+    padding: 36px 0;
+  }
+}
+.price_table__wrap {
+  width: 100%;
+  border: 1px solid #D3D0D0;
+  overflow: hidden;
+  border-radius: 16px;
+}
+.price_table__row {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-bottom: 1px solid #D3D0D0;
+  padding: 20px 32px;
+}
+@media screen and (max-width: 980px) {
+  .price_table__row {
+    padding: 12px 16px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+.price_table__row:last-child {
+  border-bottom: none;
+}
+.price_table__row:nth-child(2n+1) {
+  background-color: #111010;
+}
+.price_table__row p {
+  color: #FFFFFF;
+}
+.price_table__row p span {
+  color: #FFFFFF;
+}
+@media screen and (max-width: 980px) {
+  .price_table__row.price_value {
+    margin-top: 8px;
+  }
+}

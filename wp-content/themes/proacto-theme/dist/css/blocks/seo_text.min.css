@@ -1,0 +1,109 @@
+/*!******************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./node_modules/sass-loader/dist/cjs.js!./scss/blocks/seo_text.scss ***!
+  \******************************************************************************************************************************************************************************************/
+.seo_text {
+  padding: 72px 0;
+}
+@media screen and (max-width: 980px) {
+  .seo_text {
+    padding: 48px 0;
+  }
+}
+.seo_text .headline {
+  color: #FFFFFF;
+  margin-bottom: 36px;
+}
+@media screen and (max-width: 980px) {
+  .seo_text .headline {
+    margin-bottom: 24px;
+  }
+}
+.seo_text .seo_text__body {
+  color: #D3D0D0;
+  max-height: 360px;
+  overflow: hidden;
+  position: relative;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.seo_text .seo_text__body:after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(13.32%, rgba(28, 26, 26, 0)), color-stop(49.18%, rgba(28, 26, 26, 0.55)), color-stop(55.43%, rgba(28, 26, 26, 0.75)), color-stop(69.02%, rgba(28, 26, 26, 0.85)), color-stop(76.09%, rgba(28, 26, 26, 0.85)), color-stop(80.98%, rgba(28, 26, 26, 0.95)), color-stop(91.3%, rgba(28, 26, 26, 0.97)), to(#1C1A1A));
+  background: -o-linear-gradient(top, rgba(28, 26, 26, 0) 13.32%, rgba(28, 26, 26, 0.55) 49.18%, rgba(28, 26, 26, 0.75) 55.43%, rgba(28, 26, 26, 0.85) 69.02%, rgba(28, 26, 26, 0.85) 76.09%, rgba(28, 26, 26, 0.95) 80.98%, rgba(28, 26, 26, 0.97) 91.3%, #1C1A1A 100%);
+  background: linear-gradient(180deg, rgba(28, 26, 26, 0) 13.32%, rgba(28, 26, 26, 0.55) 49.18%, rgba(28, 26, 26, 0.75) 55.43%, rgba(28, 26, 26, 0.85) 69.02%, rgba(28, 26, 26, 0.85) 76.09%, rgba(28, 26, 26, 0.95) 80.98%, rgba(28, 26, 26, 0.97) 91.3%, #1C1A1A 100%);
+  height: 96px;
+}
+.seo_text .seo_text__body.opened {
+  max-height: 2000px;
+  overflow: auto;
+}
+.seo_text .seo_text__body.opened:after {
+  display: none;
+}
+.seo_text .seo_text__body h1, .seo_text .seo_text__body h2, .seo_text .seo_text__body h3, .seo_text .seo_text__body h4, .seo_text .seo_text__body h5, .seo_text .seo_text__body h6 {
+  font-family: Roboto, sans-serif;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 30px;
+  color: #FFFFFF;
+  margin-bottom: 12px;
+}
+.seo_text .seo_text__body p {
+  margin-bottom: 24px;
+}
+.seo_text .seo_text__body ul {
+  margin-bottom: 12px;
+}
+.seo_text .seo_text__body ul li {
+  padding-left: 12px;
+  position: relative;
+}
+.seo_text .seo_text__body ul li:before {
+  content: "";
+  display: block;
+  width: 4px;
+  height: 4px;
+  position: absolute;
+  left: 4px;
+  top: 12px;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+}
+.seo_text .text-button {
+  position: relative;
+  font-weight: 500;
+}
+.seo_text .text-button:after {
+  content: "";
+  display: block;
+  width: 8px;
+  height: 8px;
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  border-left: 2px solid #B52929;
+  border-top: 2px solid #B52929;
+  -webkit-transform: translate(50%, -75%) rotate(225deg);
+      -ms-transform: translate(50%, -75%) rotate(225deg);
+          transform: translate(50%, -75%) rotate(225deg);
+}
+.seo_text .text-button .close {
+  display: none;
+}
+.seo_text .text-button.opened:after {
+  -webkit-transform: translate(50%, -50%) rotate(45deg);
+      -ms-transform: translate(50%, -50%) rotate(45deg);
+          transform: translate(50%, -50%) rotate(45deg);
+}
+.seo_text .text-button.opened .close {
+  display: block;
+}
+.seo_text .text-button.opened .open {
+  display: none;
+}

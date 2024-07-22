@@ -1,0 +1,46 @@
+@import "../generals/colors";
+
+.cta_image {
+  padding: 72px 0;
+
+  @media screen and (max-width: 980px){
+    padding: 48px 0;
+  }
+
+  &__wrap {
+    overflow: hidden;
+    border-radius: 20px;
+    padding: 96px 0;
+    background-size: cover;
+
+    @media screen and (max-width: 980px){
+      padding: 56px 16px;
+      border-radius: 16px;
+    }
+  }
+
+  &__texts {
+    width: 50%;
+    max-width: 656px;
+    padding: 0 64px;
+    @media screen and (max-width: 980px){
+      width: 100%;
+      max-width: 100%;
+      padding: 0px;
+    }
+
+    .headline {
+      margin-bottom: 16px;
+      color: $white;
+
+      b, strong {
+        color: $accent-50;
+      }
+    }
+
+    .body {
+      margin-bottom: 24px;
+      color: $primary-10;
+    }
+  }
+}

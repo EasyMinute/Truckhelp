@@ -1,0 +1,4 @@
+# Browsers that we support
+last 5 versions
+ie >= 9
+Firefox ESR

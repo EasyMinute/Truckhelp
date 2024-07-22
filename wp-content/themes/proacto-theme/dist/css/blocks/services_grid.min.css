@@ -1,0 +1,90 @@
+/*!***********************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./node_modules/sass-loader/dist/cjs.js!./scss/blocks/services_grid.scss ***!
+  \***********************************************************************************************************************************************************************************************/
+.services_grid {
+  padding: 72px 0;
+}
+@media screen and (max-width: 920px) {
+  .services_grid {
+    padding: 48px 0;
+  }
+}
+.services_grid .headline {
+  margin-bottom: 36px;
+  color: #FFFFFF;
+}
+@media screen and (max-width: 920px) {
+  .services_grid .headline {
+    margin-bottom: 24px;
+  }
+}
+.services_grid .services_grid__wrap {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+@media screen and (max-width: 1024px) {
+  .services_grid .services_grid__wrap {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (max-width: 920px) {
+  .services_grid .services_grid__wrap {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 576px) {
+  .services_grid .services_grid__wrap {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+.services_grid .service_card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100%;
+}
+
+.service_card {
+  background-color: #111010;
+  border: 1px solid #262626;
+  border-radius: 16px;
+  padding: 32px 24px;
+  position: relative;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.service_card:hover {
+  background-color: #B52929;
+}
+.service_card:hover .arrow-link::after {
+  background-color: #DF7272;
+}
+.service_card__title {
+  margin-bottom: 36px;
+  color: #FFFFFF;
+}
+.service_card img {
+  width: 108px;
+  height: 108px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  margin-bottom: 56px;
+}
+.service_card .arrow-link {
+  color: #FFFFFF;
+  margin: auto auto 0 auto;
+}
+.service_card .arrow-link span {
+  font-size: 22px;
+  font-weight: 400;
+}
+.service_card .arrow-link span b {
+  font-size: 24px;
+  font-weight: 500;
+}

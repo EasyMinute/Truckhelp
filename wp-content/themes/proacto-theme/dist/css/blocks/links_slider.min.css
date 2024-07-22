@@ -1,0 +1,76 @@
+/*!**********************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./node_modules/sass-loader/dist/cjs.js!./scss/blocks/links_slider.scss ***!
+  \**********************************************************************************************************************************************************************************************/
+.links_slider {
+  padding: 72px 0;
+}
+@media screen and (max-width: 980px) {
+  .links_slider {
+    padding: 48px 0;
+  }
+}
+.links_slider .container {
+  overflow: visible;
+}
+.links_slider .headline {
+  color: #FFFFFF;
+  margin-bottom: 36px;
+}
+@media screen and (max-width: 980px) {
+  .links_slider .headline {
+    margin-bottom: 24px;
+  }
+}
+.links_slider .links_slider {
+  overflow: visible;
+}
+.links_slider .links_slider .swiper-wrapper {
+  overflow: visible;
+}
+.links_slider .links_slider__slide-wrap {
+  position: relative;
+  width: 100%;
+  padding-top: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.links_slider .links_slider__slide-wrap img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+.links_slider .links_slider__slide-wrap .link-overlay {
+  background-color: #B52929;
+  color: #FFFFFF;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  text-transform: uppercase;
+  width: 100%;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 1;
+  opacity: 0;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.links_slider .links_slider__slide-wrap .link-overlay:hover {
+  opacity: 1;
+}
