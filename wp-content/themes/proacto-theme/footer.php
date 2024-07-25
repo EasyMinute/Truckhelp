@@ -45,9 +45,11 @@ $service_centres = get_posts(array(
                             <?= __('Приймаємо до оплати:', 'proacto') ?>
                         </p>
                         <div class="payment_cards">
-                            <?php foreach($footer_options['payments'] as $image) : ?>
-                                <img src="<?= esc_url( $image['url'] ) ?>" alt="<?= esc_attr( $image['alt'] ) ?>">
-                            <?php endforeach; ?>
+	                        <?php if(!empty($footer_options['payments'])) : ?>
+                                <?php foreach($footer_options['payments'] as $image) : ?>
+                                    <img src="<?= esc_url( $image['url'] ) ?>" alt="<?= esc_attr( $image['alt'] ) ?>">
+                                <?php endforeach; ?>
+                            <?php endif; ?>
                         </div>
                     </div>
                 </div>
@@ -106,7 +108,7 @@ $service_centres = get_posts(array(
         <div class="footer__copyright">
             <div class="container">
                 <p class="body body-xxs regular">
-                    <?= $footer_options['copyright'] ?>
+                    <?php echo !empty($footer_options['copyright']) ? $footer_options['copyright'] : '' ?>
                 </p>
             </div>
         </div>
