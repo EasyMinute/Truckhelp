@@ -55,11 +55,27 @@ input, textarea {
     display: inline-block;
     width: 24px;
     height: 24px;
+    font-size: 0;
+    appearance: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    background-image: url(../img/icons/Checkbox.svg);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    &:checked {
+      background-image: url(../img/icons/Checkbox-checked.svg);
+    }
   }
   &[type='radio'] {
     display: inline-block;
     width: 24px;
     height: 24px;
+    appearance: none;
+    border: none;
+    padding: 0;
+    margin: 0;
   }
 
 }

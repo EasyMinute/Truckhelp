@@ -44,17 +44,21 @@ if ($latest_news['choose'] && !empty($latest_news['news'])){
                 ?>
 
                 <div class="news_card">
-                    <img src="<?= $thumb_url ?>" alt="<?= $thumb_alt ?>">
+                    <div class="news_card__image">
+                        <img src="<?= $thumb_url ?>" alt="<?= $thumb_alt ?>">
+                    </div>
                     <div class="news_card__texts">
                         <p class="date body body-xs medium">
                             <?= $post_date ?>
                         </p>
-                        <h3 class="title body body-m bold">
-                            <?= $post_title ?>
-                        </h3>
-                        <p class="excerpt body body-m regular">
-                            <?= $post_excerpt ?>
-                        </p>
+                        <div class="texts">
+                            <h3 class="title body body-m bold">
+                                <?= $post_title ?>
+                            </h3>
+                            <p class="excerpt body body-m regular">
+                                <?= $post_excerpt ?>
+                            </p>
+                        </div>
                         <a href="<?= $post_link ?>" class="button button-m primary">
                             <?= __('Читати далі', 'proacto') ?>
                         </a>

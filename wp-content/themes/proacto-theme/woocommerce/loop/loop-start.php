@@ -18,12 +18,36 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
+$product_categories = get_terms( 'product_cat', array( 'hide_empty' => false ) );
+$product_tags = get_terms( 'product_tag', array( 'hide_empty' => false ) );
 ?>
 <section class="products-grid">
     <div class="container">
         <div class="products-grid__wrap">
             <div class="products-grid__filter">
-
+                <div class="products-grid__filter-block">
+                    <h3 class="title body body-xl bold">
+                        <?= __('Категорія', 'proacto')?>
+                    </h3>
+                    <?php
+                    foreach( $product_categories as $category ) {
+                        echo '<label class="body body-m regular"><input type="checkbox" class="filter-checkbox" data-type="category" value="' . esc_attr( $category->slug ) . '">' . esc_html( $category->name ) . '</label><br>';
+                    }
+                    ?>
+                </div>
+                <div class="products-grid__filter-block">
+                    <h3 class="title body body-xl bold">
+                        <?= __('Марка авто', 'proacto')?>
+                    </h3>
+                    <?php
+                    foreach( $product_tags as $tag ) {
+                        echo '<label class="body body-m regular"><input type="checkbox" class="filter-checkbox" data-type="tag" value="' . esc_attr( $tag->slug ) . '">' . esc_html( $tag->name ) . '</label><br>';
+                    }
+                    ?>
+                </div>
+                <a class="text-button" href="<?= get_permalink( wc_get_page_id( 'shop' ) ) ?>">
+                    <?= __('Скинути всі параметри', 'proacto') ?>
+                </a>
             </div>
 
             <ul class="products products-grid__grid">

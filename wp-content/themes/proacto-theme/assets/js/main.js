@@ -10,3 +10,6 @@ import "./blocks/sliders";
 import "./blocks/seo_text";
 import "./blocks/map";
 
+// Import includes
+import "./includes/filter";
+

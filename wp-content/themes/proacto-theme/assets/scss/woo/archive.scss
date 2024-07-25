@@ -11,32 +11,66 @@
 .products-grid {
   padding: 12px 0 48px;
 
-  @media screen and (max-width: 980px){
+  @media screen and (max-width: 980px) {
     padding: 12px 0;
   }
 
   &__wrap {
     display: flex;
-    align-items: flex-start;
     width: 100%;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
   }
 
   &__filter {
     width: fit-content;
-    max-width: calc(100% / 3);
+    max-width: calc(25% - 8px);
     margin-right: 16px;
+    background-color: $primary-70;
+    border-radius: 12px;
+    padding: 0 24px 24px 24px;
+
+    &-block {
+      padding: 24px 0;
+      border-bottom: 1px solid $primary-30;
+
+      .title {
+        color: $white;
+        margin-bottom: 20px;
+      }
+
+      label {
+        color: $primary-10;
+        display: flex;
+        width: 100%;
+        align-items: center;
+
+        input {
+          margin-right: 4px;
+        }
+      }
+    }
+
+    .text-button {
+      color: $white;
+      font-weight: bold;
+      margin-top: 24px;
+      display: block;
+    }
   }
 
   &__grid {
     width: 100%;
+    max-width: calc(75% - 8px);
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 16px;
 
-    @media screen and (max-width: 920px){
+    @media screen and (max-width: 920px) {
       grid-template-columns: repeat(2, 1fr);
     }
-    @media screen and (max-width: 576px){
+    @media screen and (max-width: 576px) {
       grid-template-columns: repeat(1, 1fr);
     }
 

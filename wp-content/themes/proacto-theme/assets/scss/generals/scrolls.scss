@@ -1,0 +1,83 @@
+@import "colors";
+
+/* Webkit browsers (Chrome, Safari) */
+::-webkit-scrollbar {
+  width: 2px;
+  height: 2px;
+}
+
+::-webkit-scrollbar-track {
+  background: $primary-70;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $accent-50;
+  border-radius: 1px;
+}
+
+/* Firefox */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: $accent-50 $primary-70;
+}
+
+/* Edge and IE */
+body {
+  -ms-overflow-style: none;  /* IE and Edge */
+}
+
+body::-webkit-scrollbar {
+  width: 2px;
+  height: 2px;
+}
+
+body::-webkit-scrollbar-track {
+  background: $primary-70;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: $accent-50;
+  border-radius: 1px;
+}
+
+
+
+/* Webkit browsers (Chrome, Safari) */
+.scrollable::-webkit-scrollbar {
+  width: 2px;
+  height: 2px;
+}
+
+.scrollable::-webkit-scrollbar-track {
+  background: $primary-70;
+}
+
+.scrollable::-webkit-scrollbar-thumb {
+  background: $accent-50;
+  border-radius: 1px;
+}
+
+/* Firefox */
+.scrollable {
+  scrollbar-width: thin;
+  scrollbar-color: $accent-50 $primary-70;
+}
+
+/* Edge and IE */
+.scrollable {
+  -ms-overflow-style: none;  /* IE and Edge */
+}
+
+.scrollable::-webkit-scrollbar {
+  width: 2px;
+  height: 2px;
+}
+
+.scrollable::-webkit-scrollbar-track {
+  background: $primary-70;
+}
+
+.scrollable::-webkit-scrollbar-thumb {
+  background: $accent-50;
+  border-radius: 1px;
+}
