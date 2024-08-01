@@ -2857,7 +2857,7 @@ main.single-post {
 @media screen and (max-width: 980px) {
   .header .header__wrap.opened .header-navigation {
     max-height: 100vh;
-    padding: 24px 0;
+    padding: 24px 12px;
   }
 }
 .header .header__wrap .header__logo {
@@ -2871,8 +2871,8 @@ main.single-post {
 @media screen and (max-width: 980px) {
   .header .header__wrap .header-navigation {
     position: absolute;
-    top: 100%;
-    left: 0;
+    top: calc(100% + 12px);
+    left: -12px;
     width: 100vw;
     height: 100vh;
     background-color: #111010;

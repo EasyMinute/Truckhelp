@@ -14,7 +14,7 @@
       .header-navigation {
         @media screen and (max-width: 980px) {
           max-height: 100vh;
-          padding: 24px 0;
+          padding: 24px 12px;
         }
       }
     }
@@ -29,8 +29,8 @@
     .header-navigation {
       @media screen and (max-width: 980px) {
         position: absolute;
-        top: 100%;
-        left: 0;
+        top: calc(100% + 12px);
+        left: -12px;
         width: 100vw;
         height: 100vh;
         background-color: $primary-70;
