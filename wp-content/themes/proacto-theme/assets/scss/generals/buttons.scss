@@ -184,3 +184,46 @@
     transform: translate(-50%, -50%) rotate(-45deg);
   }
 }
+
+.burger {
+  display: block;
+  position: relative;
+  width: 32px;
+  height: 32px;
+  background-color: $accent-50;
+  border-radius: 50%;
+  border: none;
+
+  span {
+    width: 14px;
+    height: 2px;
+    background: $white;
+    border-radius: 2px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all .5s;
+
+    &:first-child {
+      transform: translate(-50%, calc(-50% - 4px));
+    }
+
+    &:last-child {
+      transform: translate(-50%, calc(-50% + 4px));
+    }
+  }
+}
+
+.opened {
+  .burger {
+    span {
+      transform: translate(-50%, -50%) rotate(45deg);
+
+      &:first-child,
+      &:last-child {
+        transform: translate(-50%, -50%) rotate(-45deg);
+      }
+    }
+  }
+}

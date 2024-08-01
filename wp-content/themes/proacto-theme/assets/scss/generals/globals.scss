@@ -20,3 +20,15 @@ img {
 section {
   overflow-x: hidden;
 }
+
+.mobile {
+  @media screen and (min-width: 980px) {
+    display: none !important;
+  }
+}
+
+.desktop {
+  @media screen and (max-width: 980px) {
+    display: none !important;
+  }
+}

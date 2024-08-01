@@ -1,0 +1,41 @@
+@import "../generals/colors";
+
+.currency-converter {
+  position: relative;
+
+  &__button  {
+    display: block;
+    width: 100px;
+    text-align: center;
+    color: $white;
+    padding: 6px 24px;
+    border: 1px solid $stroke;
+    background-color: $primary-70;
+    transition: all .3s;
+
+    @media screen and (max-width: 980px) {
+      font-size: 14px;
+      line-height: 16px;
+      padding: 6px 14px;
+    }
+
+    &:first-child {
+      border-radius:12px 12px 0 0;
+      border-bottom: none;
+    }
+
+    &:last-child {
+      border-radius:0 0 12px 12px;
+      border-top: none;
+    }
+    
+    &.active {
+      border-color: #ffffff33;
+      background-color: $accent-50;
+    }
+
+    &:hover {
+      color: $primary-20;
+    }
+  }
+}

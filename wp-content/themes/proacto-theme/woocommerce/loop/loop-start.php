@@ -24,7 +24,13 @@ $product_tags = get_terms( 'product_tag', array( 'hide_empty' => false ) );
 <section class="products-grid">
     <div class="container">
         <div class="products-grid__wrap">
-            <div class="products-grid__filter">
+            <button class="mobile button button-m primary button-opener" data-target="pr-products-filter">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19.0001 7L5.0001 7.00002M16.5001 12L7.50009 12M13.5001 17H10.5001" stroke="white" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <?= __('Фільтрувати', 'proacto') ?>
+            </button>
+            <div id="pr-products-filter" class="products-grid__filter">
                 <div class="products-grid__filter-block">
                     <h3 class="title body body-xl bold">
                         <?= __('Категорія', 'proacto')?>

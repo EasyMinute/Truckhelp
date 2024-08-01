@@ -27,7 +27,7 @@
 	
 <header id="header" class="header">
 	<div class="container">
-        <div class="header__wrap">
+        <div class="header__wrap" id="header-navigation">
             <?php if(!is_front_page()): ?>
                 <a href="<?= get_home_url()?>" class="header__logo">
                     <img src="<?= esc_url( $header['logo']['url'] ) ?>"
@@ -39,15 +39,26 @@
                          alt="<?= esc_attr( $header['logo']['alt'] ) ?>" class="header__logo">
                 </div>
             <?php endif; ?>
-            <?php wp_nav_menu([
-                'menu' => 'Header',
-                'menu_class' => 'header_menu',
-                'container' => 'div',
-                'container_class' => 'header_nav'
-            ]) ?>
+            <div class="header-navigation">
+                <a href="<?= $header['shop_button']['url'] ?>" class="button button-m primary mobile">
+		            <?= $header['shop_button']['title'] ?>
+                </a>
+                <?php wp_nav_menu([
+                    'menu' => 'Header',
+                    'menu_class' => 'header_menu',
+                    'container' => 'div',
+                    'container_class' => 'header_nav'
+                ]) ?>
+                <div class="lang-switch-mobile mobile">
+	                <?php echo do_shortcode('[wpml_language_selector_widget]') ?>
+                </div>
+            </div>
             <div class="header_service">
+                <div class="desktop lang-switch">
+                    <?php echo do_shortcode('[wpml_language_selector_widget]') ?>
+                </div>
                 <div class="header_buttons">
-                    <a href="<?= $header['shop_button']['url'] ?>" class="button button-m primary">
+                    <a href="<?= $header['shop_button']['url'] ?>" class="button button-m primary desktop">
 	                    <?= $header['shop_button']['title'] ?>
                     </a>
                     <a href="<?= wc_get_cart_url() ?>" class="button button-m primary header_cart">
@@ -58,6 +69,11 @@
                             <?=  WC()->cart->get_cart_contents_count(); ?>
                         </span>
                     </a>
+                    <button class="mobile button-opener burger" data-action="toggle" data-target="header-navigation">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
                 </div>
             </div>
         </div>

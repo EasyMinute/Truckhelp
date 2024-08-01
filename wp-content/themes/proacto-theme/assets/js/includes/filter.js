@@ -36,4 +36,5 @@ jQuery(document).ready(function($) {
         // Reload page
         window.location.reload();
     });
+
 });

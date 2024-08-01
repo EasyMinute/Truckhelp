@@ -3,8 +3,14 @@
 .proacto-shop-header {
   padding: 24px 0;
 
-  .headline {
-    color: $white;
+  &__wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .headline {
+      color: $white;
+    }
   }
 }
 
@@ -21,6 +27,13 @@
     flex-wrap: wrap;
     align-items: flex-start;
     justify-content: space-between;
+    @media screen and (max-width: 980px) {
+      flex-direction: column;
+    }
+  }
+
+  .button-opener {
+    margin-bottom: 24px;
   }
 
   &__filter {
@@ -30,6 +43,24 @@
     background-color: $primary-70;
     border-radius: 12px;
     padding: 0 24px 24px 24px;
+    transition: all .5s;
+
+    @media screen and (max-width: 980px) {
+      position: fixed;
+      width: 100vw;
+      height: 100vh;
+      max-width: unset;
+      overflow: auto;
+      top: 0;
+      left: 0;
+      transform: translateX(-100%);
+      z-index: 320;
+    }
+
+    &.opened {
+      transform: translateX(0);
+    }
+
 
     &-block {
       padding: 24px 0;
@@ -67,6 +98,10 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 16px;
 
+    @media screen and (max-width: 980px) {
+      max-width: 100%;
+    }
+
     @media screen and (max-width: 920px) {
       grid-template-columns: repeat(2, 1fr);
     }
@@ -77,6 +112,9 @@
     .product-card {
       display: flex;
       height: 100%;
+      @media screen and (max-width: 980px) {
+        height: auto;
+      }
     }
   }
 }

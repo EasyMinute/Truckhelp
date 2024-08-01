@@ -4,6 +4,7 @@
 //include template example
 import "./templates/header";
 import "./templates/popups";
+import "./templates/openers";
 
 // Import blocks
 import "./blocks/sliders";
