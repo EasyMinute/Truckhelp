@@ -13,4 +13,5 @@ import "./blocks/map";
 
 // Import includes
 import "./includes/filter";
+import "./includes/inputs";
 

@@ -47,14 +47,14 @@ if ( $show_downloads ) {
 <section class="woocommerce-order-details">
 	<?php do_action( 'woocommerce_order_details_before_order_table', $order ); ?>
 
-	<h2 class="woocommerce-order-details__title"><?php esc_html_e( 'Order details', 'woocommerce' ); ?></h2>
+	<h2 class="order-details-headline body body-m medium woocommerce-order-details__title"><?php esc_html_e( 'Order details', 'woocommerce' ); ?></h2>
 
 	<table class="woocommerce-table woocommerce-table--order-details shop_table order_details">
 
 		<thead>
 			<tr>
-				<th class="woocommerce-table__product-name product-name"><?php esc_html_e( 'Product', 'woocommerce' ); ?></th>
-				<th class="woocommerce-table__product-table product-total"><?php esc_html_e( 'Total', 'woocommerce' ); ?></th>
+				<th class="body body-s medium order-title woocommerce-table__product-name product-name"><?php esc_html_e( 'Product', 'woocommerce' ); ?></th>
+				<th class="body body-s medium order-title woocommerce-table__product-table product-total"><?php esc_html_e( 'Total', 'woocommerce' ); ?></th>
 			</tr>
 		</thead>
 
@@ -87,16 +87,16 @@ if ( $show_downloads ) {
 			foreach ( $order->get_order_item_totals() as $key => $total ) {
 				?>
 					<tr>
-						<th scope="row"><?php echo esc_html( $total['label'] ); ?></th>
-						<td><?php echo wp_kses_post( $total['value'] ); ?></td>
+						<th class="body body-s regular order-text" scope="row"><?php echo esc_html( $total['label'] ); ?></th>
+						<td class="body body-s regular order-text"> <?php echo wp_kses_post( $total['value'] ); ?></td>
 					</tr>
 					<?php
 			}
 			?>
 			<?php if ( $order->get_customer_note() ) : ?>
 				<tr>
-					<th><?php esc_html_e( 'Note:', 'woocommerce' ); ?></th>
-					<td><?php echo wp_kses_post( nl2br( wptexturize( $order->get_customer_note() ) ) ); ?></td>
+					<th class="body body-s regular order-text"><?php esc_html_e( 'Note:', 'woocommerce' ); ?></th>
+					<td class="body body-s regular order-text"><?php echo wp_kses_post( nl2br( wptexturize( $order->get_customer_note() ) ) ); ?></td>
 				</tr>
 			<?php endif; ?>
 		</tfoot>

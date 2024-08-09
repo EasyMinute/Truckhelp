@@ -18,11 +18,22 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
+$img_name = 'bacs.svg';
+if ($gateway->id == 'liqpay-webplus') {
+	$img_name = 'liqpay.svg';
+} elseif ($gateway->id == 'stripe_cc') {
+	$img_name = 'stripe.svg';
+} elseif ($gateway->id == 'ppcp') {
+	$img_name = 'paypal.svg';
+}
+
+$img_url = get_template_directory_uri() . '/assets/img/static/' . $img_name;
 ?>
 <li class="wc_payment_method payment_method_<?php echo esc_attr( $gateway->id ); ?>">
-	<input id="payment_method_<?php echo esc_attr( $gateway->id ); ?>" type="radio" class="input-radio" name="payment_method" value="<?php echo esc_attr( $gateway->id ); ?>" <?php checked( $gateway->chosen, true ); ?> data-order_button_text="<?php echo esc_attr( $gateway->order_button_text ); ?>" />
 
 	<label class="body body-s regular" for="payment_method_<?php echo esc_attr( $gateway->id ); ?>">
-		<?php echo $gateway->get_title(); /* phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped */ ?> <?php echo $gateway->get_icon(); /* phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped */ ?>
+        <img src="<?= $img_url ?>" alt="">
+	    <input id="payment_method_<?php echo esc_attr( $gateway->id ); ?>" type="radio" class="payment_method_input input-radio" name="payment_method" value="<?php echo esc_attr( $gateway->id ); ?>" <?php checked( $gateway->chosen, true ); ?> data-order_button_text="<?php echo esc_attr( $gateway->order_button_text ); ?>" <?php echo $gateway->id=='bacs' ? 'checked' : '' ?> />
+        <span><?php echo $gateway->get_title(); /* phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped */ ?></span>
 	</label>
 </li>

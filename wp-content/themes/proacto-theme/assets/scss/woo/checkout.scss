@@ -25,13 +25,21 @@
     width: 100%;
     max-width: calc(100% - 557px);
 
+    @media screen and (max-width: 980px) {
+      max-width: 100%;
+    }
+
     &-contact {
       border: 1px solid $primary-30;
       border-radius: 24px;
       padding: 32px 24px;
       margin-bottom: 16px;
 
-      wc-order-attribution-inputs {
+      @media screen and (max-width: 980px){
+        padding: 24px 16px;
+      }
+
+      .wc-order-attribution-inputs {
         display: none;
       }
 
@@ -50,6 +58,10 @@
           width: 100%;
           max-width: calc(50% - 8px);
           margin-bottom: 16px;
+
+          @media screen and (max-width: 980px){
+            max-width: 100%;
+          }
         }
       }
     }
@@ -60,6 +72,10 @@
       border: 1px solid $primary-30;
       border-radius: 24px;
       padding: 32px 24px;
+
+      @media screen and (max-width: 980px){
+        padding: 24px 16px;
+      }
 
       .woocommerce-checkout-payment {
         width: 100%;
@@ -78,13 +94,40 @@
           .wc_payment_method {
             width: 100%;
             max-width: calc(50% - 8px);
-            padding: 4px;
             margin-bottom: 16px;
             border-radius: 24px;
             border: 1px solid $primary-30;
+            padding: 0;
+            height: fit-content;
+            color: $primary-30;
+            @media screen and (max-width: 980px){
+              max-width: 100%;
+            }
+
+            &.chosen {
+              border-color: $white;
+
+              span {
+                color: $white;
+              }
+            }
 
             label {
-              color: $primary-30;
+              padding: 4px;
+              display: flex;
+              align-items: center;
+
+              span {
+                color: $primary-30;
+              }
+
+              input {
+                display: none;
+              }
+
+              img {
+                margin-right: 8px;
+              }
             }
           }
         }
@@ -98,6 +141,12 @@
     border: 1px solid $primary-30;
     border-radius: 24px;
     padding: 32px 24px;
+
+    @media screen and (max-width: 980px) {
+      max-width: 100%;
+      order: -1;
+      margin-bottom: 16px;
+    }
 
     &-head {
       display: flex;
@@ -209,4 +258,10 @@
     }
   }
 
+}
+
+.woocommerce-checkout #payment ul.payment_methods li[class*=payment_method_stripe_]:nth-child(n+2),
+li[class*=payment_method] input[type=radio]+label:not(.wc-stripe-label-payment-type),
+ul.payment_methods li[class*=payment_method_stripe_]:nth-child(n+2) {
+  order: 1;
 }

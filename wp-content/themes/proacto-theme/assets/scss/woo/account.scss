@@ -1,0 +1,184 @@
+@import "../generals/colors";
+
+.prt-account {
+  padding: 64px 0;
+  @media screen and (max-width: 980px){
+    padding: 40px 0;
+  }
+
+  &-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    &__nav {
+      width: 100%;
+      max-width: 200px;
+      @media screen and (max-width: 980px){
+        max-width: 100%;
+        margin-bottom: 16px;
+      }
+
+      .woocommerce-MyAccount-navigation {
+        ul {
+          width: 100%;
+          padding: 16px 12px;
+          //border: 1px solid $primary-30;
+          background: $primary-70;
+          border-radius: 12px;
+
+
+          li {
+            margin-bottom: 16px;
+
+            &:last-child {
+              margin-bottom: 0;
+            }
+
+            a {
+              color: $primary-30;
+              transition: all .5s;
+
+              &:hover {
+                color: white;
+              }
+            }
+
+            &.is-active {
+              a {
+                color: white;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &__content {
+      width: 100%;
+      max-width: calc(100% - 224px);
+      padding: 12px 16px;
+      @media screen and (max-width: 980px){
+        max-width: 100%;
+        overflow: auto;
+      }
+
+      .woocommerce-EditAccountForm {
+        max-width: 600px;
+        .body {
+          color: $white;
+          margin-bottom: 16px;
+
+          input {
+            margin-bottom: 16px;
+          }
+        }
+
+        .prt-password-change {
+          margin-top: 32px;
+
+          legend {
+            color: $white;
+            margin-bottom: 16px;
+          }
+        }
+      }
+
+      .prt-account__dashboard {
+        p {
+          color: $primary-10;
+
+          a {
+            text-decoration: underline;
+          }
+        }
+      }
+
+      .my_account_orders {
+        th, td {
+          padding: 8px;
+        }
+
+        .table-header {
+          color: $white;
+        }
+
+        .table-cell {
+          color: $primary-20;
+
+          * {
+            color: $primary-20;
+          }
+
+          .button {
+            color: $white;
+          }
+        }
+      }
+
+      .prt-account_view-order {
+        .order-title {
+          color: $white;
+          margin-bottom: 16px;
+        }
+
+        .order-text {
+          color: $primary-20;
+        }
+
+        .order-details-headline  {
+          color: $white;
+          margin-bottom: 8px;
+          text-align: left;
+        }
+
+        .order_details {
+          margin-bottom: 16px;
+
+          th, td {
+            padding: 8px;
+
+            &.product-name {
+              text-align: left;
+            }
+
+            &.product-total {
+              text-align: center;
+            }
+          }
+
+          tfoot {
+            th{
+              padding: 4px 8px;
+              text-align: left;
+              color: $white;
+            }
+            td {
+              padding: 4px 8px;
+              text-align: center;
+            }
+
+            tr:first-child {
+              th, td {
+                padding-top: 32px;
+              }
+            }
+
+          }
+        }
+
+        .woocommerce-customer-details {
+          .woocommerce-column__title {
+            margin: 24px 0 16px;
+            color: $white ;
+          }
+
+          address {
+            font-family: Roboto, sans-serif;
+            line-height: 1.5;
+          }
+        }
+      }
+    }
+  }
+}

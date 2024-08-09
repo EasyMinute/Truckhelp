@@ -17,3 +17,22 @@ if (buttonOpeners) {
         })
     })
 }
+
+const loginSwitchers = document.querySelectorAll('.login-switcher')
+const loginBlocks  = document.querySelectorAll('.login-block')
+if (loginSwitchers) {
+    loginSwitchers.forEach(switcher => {
+        switcher.addEventListener('click', function(e) {
+            e.preventDefault()
+            let id = this.dataset.id
+            loginBlocks.forEach(block => {
+                if (block.id === id) {
+                    block.classList.remove('hidden')
+                } else {
+                    block.classList.add('hidden')
+                }
+            })
+
+        })
+    })
+}

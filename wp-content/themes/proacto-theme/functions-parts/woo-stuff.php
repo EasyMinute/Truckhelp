@@ -238,3 +238,18 @@ function enqueue_cart_quantity_script() {
 
 }
 add_action('wp_enqueue_scripts', 'enqueue_cart_quantity_script');
+
+
+//ACCOUNT
+function custom_woocommerce_account_menu_items( $items ) {
+	// Only keep these menu items
+	$items = array(
+		'dashboard'       => __( 'Dashboard', 'woocommerce' ),
+		'orders'          => __( 'Orders', 'woocommerce' ),
+		'edit-account'    => __( 'Особисті дані', 'woocommerce' ),
+		'customer-logout' => __( 'Logout', 'woocommerce' ),
+	);
+
+	return $items;
+}
+add_filter( 'woocommerce_account_menu_items', 'custom_woocommerce_account_menu_items' );
