@@ -31,6 +31,7 @@ $product_tags = get_terms( 'product_tag', array( 'hide_empty' => false ) );
                 <?= __('Фільтрувати', 'proacto') ?>
             </button>
             <div id="pr-products-filter" class="products-grid__filter">
+                <button class="close button-opener" data-action="remove" data-target="pr-products-filter"></button>
                 <div class="products-grid__filter-block">
                     <h3 class="title body body-xl bold">
                         <?= __('Категорія', 'proacto')?>

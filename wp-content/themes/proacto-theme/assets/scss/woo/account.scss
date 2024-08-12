@@ -181,4 +181,22 @@
       }
     }
   }
+
+  .woocommerce-notices-wrapper {
+    max-width: 600px;
+
+    .prt-notice {
+      border-radius: 12px;
+      background-color: $primary-70;
+      margin-bottom: 12px;
+      padding: 12px;
+    }
+  }
+}
+
+.lost-password-confirmation {
+  padding: 64px 0;
+  @media screen and (max-width: 980px){
+    padding: 40px 0;
+  }
 }

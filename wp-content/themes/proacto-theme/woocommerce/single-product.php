@@ -21,6 +21,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 get_header( 'shop' ); ?>
 
+	<section class="sproduct-header">
+		<div class="container">
+			<div class="sproduct-header__wrap">
+				<?php do_action('prt_single_prod_notices') ?>
+			</div>
+		</div>
+	</section>
+
 	<?php
 		/**
 		 * woocommerce_before_main_content hook.

@@ -84,7 +84,7 @@ remove_action('woocommerce_before_single_product_summary', 'woocommerce_show_pro
 remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_title', 5);
 remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_rating', 10);
 remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_rating', 20);
-
+remove_action( 'woocommerce_before_single_product', 'woocommerce_output_all_notices', 10 );
 
 add_action('prt_single_prod_head', 'woocommerce_template_single_title', 5);
 
@@ -94,6 +94,20 @@ add_action('prt_single_prod_add', 'woocommerce_template_single_price', 10);
 add_action('prt_single_prod_add', 'woocommerce_template_single_add_to_cart', 20);
 
 add_action('prt_single_prod_description', 'woocommerce_output_product_data_tabs', 10);
+
+add_action('prt_single_prod_notices', 'woocommerce_output_all_notices', 10);
+
+add_filter('wc_add_to_cart_message_html', 'custom_add_to_cart_button_class', 10, 2);
+
+function custom_add_to_cart_button_class($message, $products) {
+	// Look for the "View cart" button in the message
+	if (strpos($message, 'class="button wc-forward"') !== false) {
+		// Add your custom class
+		$message = str_replace('class="button wc-forward"', 'class="button wc-forward button button-m primary"', $message);
+	}
+
+	return $message;
+}
 //remove_action('', '', 10);
 
 

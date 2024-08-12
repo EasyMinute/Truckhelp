@@ -108,3 +108,18 @@ main.single-post{
     }
   }
 }
+
+.sproduct-header__wrap {
+  .prt-notice {
+    padding: 12px;
+    background-color: $primary-70;
+    display: flex;
+    border-radius: 12px;
+    flex-direction: column;
+
+    .button {
+      order: 1;
+      margin-top: 8px;
+    }
+  }
+}

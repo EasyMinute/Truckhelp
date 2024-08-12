@@ -219,6 +219,10 @@ section {
   }
 }
 
+.prt-notice {
+  color: #D3D0D0;
+}
+
 .button {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -461,6 +465,32 @@ section {
           transform: translate(-50%, -50%) rotate(45deg);
 }
 .opened .burger span:first-child, .opened .burger span:last-child {
+  -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+      -ms-transform: translate(-50%, -50%) rotate(-45deg);
+          transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.close {
+  width: 24px;
+  height: 24px;
+  background: none;
+  border: none;
+  position: relative;
+}
+.close:after, .close:before {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 100%;
+  background-color: #FFFFFF;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%) rotate(45deg);
+      -ms-transform: translate(-50%, -50%) rotate(45deg);
+          transform: translate(-50%, -50%) rotate(45deg);
+}
+.close:after {
   -webkit-transform: translate(-50%, -50%) rotate(-45deg);
       -ms-transform: translate(-50%, -50%) rotate(-45deg);
           transform: translate(-50%, -50%) rotate(-45deg);
@@ -1856,6 +1886,25 @@ main.single-post {
   color: #B52929;
 }
 
+.sproduct-header__wrap .prt-notice {
+  padding: 12px;
+  background-color: #111010;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 12px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.sproduct-header__wrap .prt-notice .button {
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+  margin-top: 8px;
+}
+
 .service-centers-info {
   padding: 72px 0;
 }
@@ -2070,6 +2119,11 @@ main.single-post {
   -webkit-transform: translateX(0);
       -ms-transform: translateX(0);
           transform: translateX(0);
+}
+.products-grid__filter .close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
 }
 .products-grid__filter-block {
   padding: 24px 0;
@@ -3057,6 +3111,24 @@ ul.payment_methods li[class*=payment_method_stripe_]:nth-child(n+2) {
   font-family: Roboto, sans-serif;
   line-height: 1.5;
 }
+.prt-account .woocommerce-notices-wrapper {
+  max-width: 600px;
+}
+.prt-account .woocommerce-notices-wrapper .prt-notice {
+  border-radius: 12px;
+  background-color: #111010;
+  margin-bottom: 12px;
+  padding: 12px;
+}
+
+.lost-password-confirmation {
+  padding: 64px 0;
+}
+@media screen and (max-width: 980px) {
+  .lost-password-confirmation {
+    padding: 40px 0;
+  }
+}
 
 .prt-login {
   padding: 64px 0;
@@ -3069,6 +3141,7 @@ ul.payment_methods li[class*=payment_method_stripe_]:nth-child(n+2) {
 .prt-login .login-text {
   color: #D3D0D0;
   margin-bottom: 8px;
+  display: block;
 }
 .prt-login .login-link {
   color: #B52929;

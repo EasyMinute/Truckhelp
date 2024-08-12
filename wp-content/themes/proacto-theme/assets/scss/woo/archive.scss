@@ -61,6 +61,11 @@
       transform: translateX(0);
     }
 
+    .close {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+    }
 
     &-block {
       padding: 24px 0;
