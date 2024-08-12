@@ -3298,13 +3298,15 @@ ul.payment_methods li[class*=payment_method_stripe_]:nth-child(n+2) {
     padding: 0;
   }
 }
-.header .header__wrap .header_service .header_buttons .header_cart {
+.header .header__wrap .header_service .header_buttons .header_cart,
+.header .header__wrap .header_service .header_buttons .header_user {
   background-color: #262424;
   border-color: #262424;
   position: relative;
   margin-left: 8px;
 }
-.header .header__wrap .header_service .header_buttons .header_cart span {
+.header .header__wrap .header_service .header_buttons .header_cart span,
+.header .header__wrap .header_service .header_buttons .header_user span {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

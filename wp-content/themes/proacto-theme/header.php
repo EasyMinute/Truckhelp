@@ -69,6 +69,14 @@
                             <?=  WC()->cart->get_cart_contents_count(); ?>
                         </span>
                     </a>
+                    <a href="<?= get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>" class="button button-m primary header_user">
+                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M13.7992 5.8C13.7992 8.45097 11.6501 10.6 8.99922 10.6C6.34825 10.6 4.19922 8.45097 4.19922 5.8C4.19922 3.14903 6.34825 1 8.99922 1C11.6501 1 13.7992 3.14903 13.7992 5.8Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M9 10.7773C4.58173 10.7773 1 13.5631 1 16.9995H17C17 13.5631 13.4183 10.7773 9 10.7773Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+
+
                     <button class="mobile button-opener burger" data-action="toggle" data-target="header-navigation">
                         <span></span>
                         <span></span>
