@@ -2690,6 +2690,9 @@ main.single-post {
 .pr-checkout__fields-payment .woocommerce-checkout-payment .wc_payment_methods .wc_payment_method label img {
   margin-right: 8px;
 }
+.pr-checkout__fields-payment .woocommerce-checkout-payment .payment_box {
+  padding: 12px;
+}
 .pr-checkout__order {
   width: 100%;
   max-width: 541px;
@@ -2817,6 +2820,10 @@ ul.payment_methods li[class*=payment_method_stripe_]:nth-child(n+2) {
   -webkit-box-ordinal-group: 2;
       -ms-flex-order: 1;
           order: 1;
+}
+
+.Label {
+  color: #FFFFFF !important;
 }
 
 .success-order {

@@ -36,4 +36,10 @@ $img_url = get_template_directory_uri() . '/assets/img/static/' . $img_name;
 	    <input id="payment_method_<?php echo esc_attr( $gateway->id ); ?>" type="radio" class="payment_method_input input-radio" name="payment_method" value="<?php echo esc_attr( $gateway->id ); ?>" <?php checked( $gateway->chosen, true ); ?> data-order_button_text="<?php echo esc_attr( $gateway->order_button_text ); ?>" <?php echo $gateway->id=='bacs' ? 'checked' : '' ?> />
         <span><?php echo $gateway->get_title(); /* phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped */ ?></span>
 	</label>
+
+	<?php if ( $gateway->has_fields() || $gateway->get_description() ) : ?>
+        <div class="payment_box payment_method_<?php echo esc_attr( $gateway->id ); ?>" <?php if ( ! $gateway->chosen ) : /* phpcs:ignore Squiz.ControlStructures.ControlSignature.NewlineAfterOpenBrace */ ?>style="display:none;"<?php endif; /* phpcs:ignore Squiz.ControlStructures.ControlSignature.NewlineAfterOpenBrace */ ?>>
+			<?php $gateway->payment_fields(); ?>
+        </div>
+	<?php endif; ?>
 </li>

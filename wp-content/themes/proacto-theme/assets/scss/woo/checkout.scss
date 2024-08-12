@@ -131,6 +131,10 @@
             }
           }
         }
+
+        .payment_box {
+          padding: 12px;
+        }
       }
     }
   }
@@ -264,4 +268,8 @@
 li[class*=payment_method] input[type=radio]+label:not(.wc-stripe-label-payment-type),
 ul.payment_methods li[class*=payment_method_stripe_]:nth-child(n+2) {
   order: 1;
+}
+
+.Label {
+  color: $white !important;
 }
