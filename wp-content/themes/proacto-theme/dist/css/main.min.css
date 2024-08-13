@@ -535,7 +535,10 @@ input, textarea {
   color: #FFFFFF;
 }
 input:focus, textarea:focus {
-  border-color: #FFFFFF;
+  border: 2px solid #FFFFFF;
+}
+input.wpcf7-not-valid, textarea.wpcf7-not-valid {
+  border-color: #FF8888;
 }
 input[type=checkbox], textarea[type=checkbox] {
   display: inline-block;
@@ -566,6 +569,31 @@ input[type=radio], textarea[type=radio] {
   border: none;
   padding: 0;
   margin: 0;
+}
+
+.intl-tel-input .selected-flag .iti-flag {
+  width: 14px;
+  border-radius: 14px;
+  -webkit-transform: scale(1.3) translateX(4px);
+      -ms-transform: scale(1.3) translateX(4px);
+          transform: scale(1.3) translateX(4px);
+}
+
+.wpcf7-not-valid-tip {
+  padding: 0 12px;
+  margin-top: 8px;
+  font-family: Roboto, sans-serif;
+  font-size: 12px;
+  line-height: 1.2;
+  color: #912121;
+}
+
+.wpcf7 form .wpcf7-response-output {
+  border-radius: 12px;
+  padding: 12px;
+  font-family: Roboto, sans-serif;
+  font-size: 14px;
+  line-height: 1.2;
 }
 
 .pr-popup {
@@ -3538,6 +3566,41 @@ ul.payment_methods li[class*=payment_method_stripe_]:nth-child(n+2) {
 }
 .footer__copyright p {
   color: #D3D0D0;
+}
+
+.block-404 {
+  padding: 64px 0;
+}
+@media screen and (max-width: 980px) {
+  .block-404 {
+    padding: 40px 0;
+  }
+}
+.block-404__wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.block-404__wrap * {
+  color: #FFFFFF;
+  text-align: center;
+}
+.block-404__wrap h2 {
+  margin-bottom: 16px;
+}
+.block-404__wrap p {
+  margin-bottom: 24px;
+}
+.block-404__wrap img {
+  width: 100%;
+  max-width: 904px;
 }
 /*!*************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/swiper/swiper-bundle.min.css ***!
