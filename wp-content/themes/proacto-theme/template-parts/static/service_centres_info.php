@@ -8,6 +8,7 @@ $posts = get_posts([
 	'status' => 'publish'
 ]);
 $location = $options['map'];
+$curr_id = get_the_ID();
 ?>
 
 <section class="service-centers-info">
@@ -26,7 +27,7 @@ $location = $options['map'];
 				$city = isset($parts[1]) ? trim($parts[2]) : '';
                 $link = get_the_permalink($post)
 				?>
-				<div class="service-center-menu-card">
+				<div class="service-center-menu-card  <?php echo $post->ID == $curr_id ? 'current' : '' ?>">
 					<p class="body body-xl bold">
                         <?= $country ?>
                     </p>

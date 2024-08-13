@@ -7,7 +7,9 @@ $posts = get_posts(array(
 	'status' => 'publish',
 	'orderby' => 'date',
 	'order' => 'DESC'
-))
+));
+
+$curr_id = get_the_ID();
 
 ?>
 
@@ -27,7 +29,7 @@ $posts = get_posts(array(
 					$post_link = get_the_permalink($post)
 					?>
 
-					<li class="service-menu-card">
+					<li class="service-menu-card <?php echo $post->ID == $curr_id ? 'current' : '' ?>">
 						<div class="service-menu-card__img">
 							<img src="<?= $post_thumb_url ?>" alt="<?= $post_thumb_alt ?>">
 						</div>

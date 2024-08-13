@@ -33,6 +33,9 @@
     .service-menu-card {
       display: flex;
       height: 100%;
+      @media screen and (max-width: 920px){
+        padding: 8px;
+      }
     }
   }
 }
@@ -48,7 +51,9 @@
   position: relative;
   transition: all .5s;
 
-  &:hover {
+  &:hover,
+  &.current{
+    border-color: $accent-50;
     background-color: $accent-50;
   }
 

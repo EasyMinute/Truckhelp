@@ -1641,6 +1641,11 @@ body::-webkit-scrollbar-thumb {
   display: flex;
   height: 100%;
 }
+@media screen and (max-width: 920px) {
+  .services_menu__wrap ul .service-menu-card {
+    padding: 8px;
+  }
+}
 
 .service-menu-card {
   background-color: #1C1A1A;
@@ -1661,7 +1666,8 @@ body::-webkit-scrollbar-thumb {
   -o-transition: all 0.5s;
   transition: all 0.5s;
 }
-.service-menu-card:hover {
+.service-menu-card:hover, .service-menu-card.current {
+  border-color: #B52929;
   background-color: #B52929;
 }
 .service-menu-card__img {
@@ -1986,7 +1992,8 @@ main.single-post {
   -o-transition: all 0.5s;
   transition: all 0.5s;
 }
-.service-center-menu-card:hover {
+.service-center-menu-card:hover, .service-center-menu-card.current {
+  border-color: #B52929;
   background-color: #B52929;
 }
 .service-center-menu-card p {
