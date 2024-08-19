@@ -48,6 +48,9 @@
           flex-direction: column;
   height: 100%;
 }
+.services_grid__link {
+  margin: 32px auto 0 auto;
+}
 
 .service_card {
   background-color: #111010;

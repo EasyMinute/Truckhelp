@@ -182,7 +182,8 @@ add_action( 'wp_head', function() {
 	?><style>
         .woocommerce button[name="update_cart"],
         .woocommerce input[name="update_cart"] {
-            display: none;
+            /*display: none;*/
+            visibility: hidden;
         }</style><?php
 
 } );
@@ -221,7 +222,17 @@ add_action( 'wp_footer', function() {
                 }
                 timeout = setTimeout(function() {
                     $("[name='update_cart']").trigger("click"); // trigger cart update
+                    console.log('sdjgfjkds')
+
                 }, 1000 ); // 1 second delay, half a second (500) seems comfortable too
+            });
+
+            $(document.body).on('updated_wc_div', function() {
+                console.log('sdjgfjkds2')
+                if ($('main').html().trim() === '') {
+                    console.log('sdjgfjkds3')
+                    location.reload(); // reload the page if <main> is empty
+                }
             });
         } );
 	</script><?php
@@ -267,3 +278,51 @@ function custom_woocommerce_account_menu_items( $items ) {
 	return $items;
 }
 add_filter( 'woocommerce_account_menu_items', 'custom_woocommerce_account_menu_items' );
+
+
+//// Add custom phone field in WooCommerce account
+//function custom_woocommerce_edit_account_form() {
+//	$user_id = get_current_user_id();
+//	$user = get_userdata($user_id);
+//	$phone = get_user_meta($user_id, 'phone', true);
+//	?>
+<!--    <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">-->
+<!--        <label for="phone">--><?php //_e('Phone', 'woocommerce'); ?><!-- <span class="required">*</span></label>-->
+<!--        <input type="tel" class="woocommerce-Input woocommerce-Input--text input-text" name="phone" id="phone" value="--><?php //echo esc_attr($phone); ?><!--" />-->
+<!--    </p>-->
+<!--	--><?php
+//}
+//add_action('woocommerce_edit_account_form', 'custom_woocommerce_edit_account_form');
+
+
+// Save phone field
+function custom_woocommerce_save_account_details($user_id) {
+	if (isset($_POST['phone'])) {
+		update_user_meta($user_id, 'phone', sanitize_text_field($_POST['phone']));
+	}
+}
+add_action('woocommerce_save_account_details', 'custom_woocommerce_save_account_details');
+
+// Save phone field in admin user profile
+function custom_woocommerce_save_user_profile($user_id) {
+	if (isset($_POST['phone'])) {
+		update_user_meta($user_id, 'phone', sanitize_text_field($_POST['phone']));
+	}
+}
+add_action('personal_options_update', 'custom_woocommerce_save_user_profile');
+add_action('edit_user_profile_update', 'custom_woocommerce_save_user_profile');
+
+// Prepopulate checkout phone field with the custom phone field from My Account
+function custom_woocommerce_checkout_get_phone( $input, $key ) {
+	if ( 'billing_phone' === $key ) {
+		$user_id = get_current_user_id();
+		if ( $user_id ) {
+			$phone = get_user_meta( $user_id, 'phone', true );
+			if ( $phone ) {
+				$input = $phone;
+			}
+		}
+	}
+	return $input;
+}
+add_filter( 'woocommerce_checkout_get_value', 'custom_woocommerce_checkout_get_phone', 10, 2 );

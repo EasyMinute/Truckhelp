@@ -55,5 +55,10 @@ if ($services_grid['choose'] && !empty($services_grid['services'])){
 			<?php endforeach; ?>
 			<?php wp_reset_postdata(); ?>
 		</div>
+        <?php if(!empty($services_grid['button'])): ?>
+            <a href="<?= $services_grid['button']['url'] ?>" class="button button-l primary services_grid__link">
+	            <?= $services_grid['button']['title'] ?>
+            </a>
+        <?php endif; ?>
 	</div>
 </section>

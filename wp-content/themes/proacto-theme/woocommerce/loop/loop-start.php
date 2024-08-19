@@ -18,7 +18,13 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
-$product_categories = get_terms( 'product_cat', array( 'hide_empty' => false ) );
+$uncategorized_term_id = get_option( 'default_product_cat' );
+
+$product_categories = get_terms( 'product_cat', array(
+        'hide_empty' => false,
+        'exclude' => $uncategorized_term_id
+    )
+);
 $product_tags = get_terms( 'product_tag', array( 'hide_empty' => false ) );
 ?>
 <section class="products-grid">

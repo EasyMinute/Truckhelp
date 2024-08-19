@@ -15,6 +15,11 @@
  * @version 8.7.0
  */
 
+$user_id = get_current_user_id();
+$user = get_userdata($user_id);
+$phone = get_user_meta($user_id, 'phone', true);
+
+
 defined( 'ABSPATH' ) || exit;
 
 do_action( 'woocommerce_before_edit_account_form' ); ?>
@@ -43,6 +48,13 @@ do_action( 'woocommerce_before_edit_account_form' ); ?>
 		<label for="account_email"><?php esc_html_e( 'Email address', 'woocommerce' ); ?>&nbsp;<span class="required">*</span></label>
 		<input type="email" class="woocommerce-Input woocommerce-Input--email input-text" name="account_email" id="account_email" autocomplete="email" value="<?php echo esc_attr( $user->user_email ); ?>" />
 	</p>
+    <div class="clear"></div>
+
+    <p class="body body-s regular woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
+        <label for="phone"><?php esc_html_e( 'Phone', 'woocommerce' ); ?>&nbsp;<span class="required">*</span></label>
+        <input type="tel" class="woocommerce-Input woocommerce-Input--email input-text" name="phone" id="phone" value="<?php echo esc_attr($phone); ?>" />
+    </p>
+    <div class="clear"></div>
 
 	<?php
 		/**
