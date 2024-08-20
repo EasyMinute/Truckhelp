@@ -258,13 +258,6 @@ function get_cart_quantity() {
 	wp_die();
 }
 
-function enqueue_cart_quantity_script() {
-
-
-}
-add_action('wp_enqueue_scripts', 'enqueue_cart_quantity_script');
-
-
 //ACCOUNT
 function custom_woocommerce_account_menu_items( $items ) {
 	// Only keep these menu items
@@ -280,19 +273,6 @@ function custom_woocommerce_account_menu_items( $items ) {
 add_filter( 'woocommerce_account_menu_items', 'custom_woocommerce_account_menu_items' );
 
 
-//// Add custom phone field in WooCommerce account
-//function custom_woocommerce_edit_account_form() {
-//	$user_id = get_current_user_id();
-//	$user = get_userdata($user_id);
-//	$phone = get_user_meta($user_id, 'phone', true);
-//	?>
-<!--    <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">-->
-<!--        <label for="phone">--><?php //_e('Phone', 'woocommerce'); ?><!-- <span class="required">*</span></label>-->
-<!--        <input type="tel" class="woocommerce-Input woocommerce-Input--text input-text" name="phone" id="phone" value="--><?php //echo esc_attr($phone); ?><!--" />-->
-<!--    </p>-->
-<!--	--><?php
-//}
-//add_action('woocommerce_edit_account_form', 'custom_woocommerce_edit_account_form');
 
 
 // Save phone field
