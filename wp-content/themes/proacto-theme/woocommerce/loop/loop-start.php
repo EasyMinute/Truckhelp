@@ -26,6 +26,10 @@ $product_categories = get_terms( 'product_cat', array(
     )
 );
 $product_tags = get_terms( 'product_tag', array( 'hide_empty' => false ) );
+
+$current_cats = isset($_GET['prt_cat']) ? (array) $_GET['prt_cat'] : array();
+$current_tags = isset($_GET['prt_tag']) ? (array) $_GET['prt_tag'] : array();
+
 ?>
 <section class="products-grid">
     <div class="container">
@@ -36,31 +40,38 @@ $product_tags = get_terms( 'product_tag', array( 'hide_empty' => false ) );
                 </svg>
                 <?= __('Фільтрувати', 'proacto') ?>
             </button>
-            <div id="pr-products-filter" class="products-grid__filter">
+            <form id="pr-products-filter" class="products-grid__filter" method="GET">
+                <input type="hidden" name="paged" value="1">
                 <button class="close button-opener" data-action="remove" data-target="pr-products-filter"></button>
                 <div class="products-grid__filter-block">
                     <h3 class="title body body-xl bold">
                         <?= __('Категорія', 'proacto')?>
                     </h3>
-                    <?php
-                    foreach( $product_categories as $category ) {
-                        echo '<label class="body body-m regular"><input type="checkbox" class="filter-checkbox" data-type="category" value="' . esc_attr( $category->slug ) . '">' . esc_html( $category->name ) . '</label><br>';
-                    }
-                    ?>
+                    <?php foreach( $product_categories as $category ) { ?>
+                        <label class="body body-m regular">
+                            <input class="filter-checkbox" type="checkbox" name="prt_cat[]" value="<?php echo esc_attr($category->slug); ?>" <?php checked(in_array($category->slug, $current_cats)); ?>>
+                            <?php echo esc_html( $category->name ) ?>
+                        </label><br>
+                    <?php } ?>
                 </div>
                 <div class="products-grid__filter-block">
                     <h3 class="title body body-xl bold">
                         <?= __('Марка авто', 'proacto')?>
                     </h3>
                     <?php
-                    foreach( $product_tags as $tag ) {
-                        echo '<label class="body body-m regular"><input type="checkbox" class="filter-checkbox" data-type="tag" value="' . esc_attr( $tag->slug ) . '">' . esc_html( $tag->name ) . '</label><br>';
-                    }
-                    ?>
+                    foreach( $product_tags as $tag ) { ?>
+                        <label class="body body-m regular">
+                            <input class="filter-checkbox" type="checkbox" name="prt_tag[]" value="<?php echo esc_attr($tag->slug); ?>" <?php checked(in_array($tag->slug, $current_tags)); ?>>
+		                    <?php echo esc_html( $tag->name ) ?>
+                        </label><br>
+                    <?php } ?>
                 </div>
+                <button class="button button-m primary" type="submit">
+                    <?= __('Застосувати', 'proacto') ?>
+                </button>
                 <a class="text-button" href="<?= get_permalink( wc_get_page_id( 'shop' ) ) ?>">
                     <?= __('Скинути всі параметри', 'proacto') ?>
                 </a>
-            </div>
+            </form>
 
             <ul class="products products-grid__grid">

@@ -86,12 +86,17 @@
           margin-right: 4px;
         }
       }
+
+    }
+
+    button[type="submit"] {
+      margin-top: 16px;
     }
 
     .text-button {
       color: $white;
       font-weight: bold;
-      margin-top: 24px;
+      margin-top: 16px;
       display: block;
     }
   }

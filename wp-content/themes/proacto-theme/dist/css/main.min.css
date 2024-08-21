@@ -2184,10 +2184,13 @@ main.single-post {
 .products-grid__filter-block label input {
   margin-right: 4px;
 }
+.products-grid__filter button[type=submit] {
+  margin-top: 16px;
+}
 .products-grid__filter .text-button {
   color: #FFFFFF;
   font-weight: bold;
-  margin-top: 24px;
+  margin-top: 16px;
   display: block;
 }
 .products-grid__grid {
@@ -2916,6 +2919,29 @@ ul.payment_methods li[class*=payment_method_stripe_]:nth-child(n+2) {
 
 .Label {
   color: #FFFFFF !important;
+}
+
+.bacs_table {
+  margin-top: 24px;
+  border: 1px solid #D3D0D0;
+  border-radius: 12px;
+}
+.bacs_table h2 {
+  padding: 8px 12px;
+  border-bottom: 1px solid #D3D0D0;
+  color: #FFFFFF;
+}
+.bacs_table p {
+  padding: 8px 12px;
+  border-bottom: 1px solid #D3D0D0;
+  color: #FFFFFF;
+}
+.bacs_table li {
+  padding: 8px 12px;
+  color: #FFFFFF;
+}
+.bacs_table li span {
+  font-weight: 400;
 }
 
 .success-order {

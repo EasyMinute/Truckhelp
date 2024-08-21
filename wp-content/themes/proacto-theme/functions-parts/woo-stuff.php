@@ -306,3 +306,45 @@ function custom_woocommerce_checkout_get_phone( $input, $key ) {
 	return $input;
 }
 add_filter( 'woocommerce_checkout_get_value', 'custom_woocommerce_checkout_get_phone', 10, 2 );
+
+
+// Display bank transfer details on the Thank You page
+add_action('prt_woocommerce_thankyou_bacs', 'display_bacs_payment_instructions', 20);
+
+function display_bacs_payment_instructions($order_id) {
+	// Get the order
+	global $wp;
+
+	// Get the order ID from the query variables
+	$order_id = isset($wp->query_vars['order-received']) ? $wp->query_vars['order-received'] : 0;
+
+	// Get the order
+	$order = wc_get_order($order_id);
+
+	// Check if the order exists and is valid
+	if (!$order) {
+		return; // Exit the function if the order is not valid
+	}
+
+	// Check if the payment method is BACS
+	if ($order->get_payment_method() === 'bacs') {
+		// Get BACS account details
+		$bacs_accounts = get_option('woocommerce_bacs_accounts');
+		if (!empty($bacs_accounts)) {
+            echo "<div class='bacs_table'>";
+			foreach ($bacs_accounts as $account) {
+				echo '<h2 class="body body-l medium">' . __('Bank Transfer Instructions') . '</h2>';
+				echo '<p class="body body-s regular">' . __('Please transfer the total amount to the following bank account.') . '</p>';
+				echo '<ul class="bacs_details">';
+				echo '<li class="body body-s medium">' . __('Account Name:') . ' ' . '<span>' . esc_html($account['account_name']) . '</span>' . '</li>';
+				echo '<li class="body body-s medium">' . __('Account Number:') . ' ' . '<span>' . esc_html($account['account_number']) . '</span>' . '</li>';
+				echo '<li class="body body-s medium">' . __('Sort Code:') . ' ' . '<span>' . esc_html($account['sort_code']) . '</span>' . '</li>';
+				echo '<li class="body body-s medium">' . __('Bank Name:') . ' ' . '<span>' . esc_html($account['bank_name']) . '</span>' . '</li>';
+				echo '<li class="body body-s medium">' . __('IBAN:') . ' ' . '<span>' . esc_html($account['iban']) . '</span>' . '</li>';
+				echo '<li class="body body-s medium">' . __('BIC:') . ' ' . '<span>' . esc_html($account['bic']) . '</span>' . '</li>';
+				echo '</ul>';
+			}
+			echo "</div>";
+		}
+	}
+}

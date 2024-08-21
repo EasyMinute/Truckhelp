@@ -34,6 +34,7 @@ defined( 'ABSPATH' ) || exit;
             <a href="<?= get_home_url() ?>" class="button button-l primary">
 				<?= __('Повернутись на головну', 'proacto') ?>
             </a>
+            <?php do_action('prt_woocommerce_thankyou_bacs') ?>
         </div>
     </div>
 </section>

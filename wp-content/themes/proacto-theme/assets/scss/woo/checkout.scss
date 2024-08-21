@@ -273,3 +273,30 @@ ul.payment_methods li[class*=payment_method_stripe_]:nth-child(n+2) {
 .Label {
   color: $white !important;
 }
+
+.bacs_table {
+  margin-top: 24px;
+  border: 1px solid $primary-10;
+  border-radius: 12px;
+
+  h2 {
+    padding: 8px 12px;
+    border-bottom: 1px solid $primary-10;
+    color: $white;
+  }
+
+  p {
+    padding: 8px 12px;
+    border-bottom: 1px solid $primary-10;
+    color: $white;
+  }
+
+  li {
+    padding: 8px 12px;
+    color: $white;
+
+    span {
+      font-weight: 400;
+    }
+  }
+}
