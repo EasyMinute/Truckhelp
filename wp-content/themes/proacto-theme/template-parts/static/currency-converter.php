@@ -1,4 +1,7 @@
 <?php
+// Start output buffering
+ob_start();
+
 // Get the user's IP address
 $user_ip = $_SERVER['REMOTE_ADDR'];
 
@@ -37,6 +40,9 @@ $eur_url = $url_components['scheme'] . '://' . $url_components['host'] . $url_co
 // Determine active currency
 $uah_active = $params['currency'] == "UAH" ? "active" : "";
 $eur_active = $params['currency'] == "EUR" ? "active" : "";
+
+// End output buffering and send output
+ob_end_flush();
 ?>
 
 
