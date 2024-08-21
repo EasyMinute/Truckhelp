@@ -1,7 +1,4 @@
 <?php
-// Start output buffering
-ob_start();
-
 // Get the user's IP address
 $user_ip = $_SERVER['REMOTE_ADDR'];
 
@@ -22,27 +19,20 @@ $current_url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https"
 $url_components = parse_url($current_url);
 parse_str($url_components['query'] ?? '', $params);
 
-// Redirect if the currency is not set or incorrect
-if (!isset($params['currency']) || $params['currency'] !== $default_currency) {
+// Set the currency in the URL if not already set
+if (!isset($params['currency'])) {
 	$params['currency'] = $default_currency;
-	$redirect_url = $url_components['scheme'] . '://' . $url_components['host'] . $url_components['path'] . '?' . http_build_query($params);
-	header("Location: $redirect_url");
-	exit;
 }
-
-// Create UAH and EUR button URLs
 $uah_query_string = http_build_query(array_merge($params, ['currency' => 'UAH']));
 $eur_query_string = http_build_query(array_merge($params, ['currency' => 'EUR']));
 
+// Construct URLs for currency buttons
 $uah_url = $url_components['scheme'] . '://' . $url_components['host'] . $url_components['path'] . '?' . $uah_query_string;
 $eur_url = $url_components['scheme'] . '://' . $url_components['host'] . $url_components['path'] . '?' . $eur_query_string;
 
 // Determine active currency
-$uah_active = $params['currency'] == "UAH" ? "active" : "";
-$eur_active = $params['currency'] == "EUR" ? "active" : "";
-
-// End output buffering and send output
-ob_end_flush();
+$uah_active = (!isset($_GET['currency']) && $default_currency === 'UAH') || (isset($_GET['currency']) && $_GET['currency'] == "UAH") ? "active" : "";
+$eur_active = (!isset($_GET['currency']) && $default_currency === 'EUR') || (isset($_GET['currency']) && $_GET['currency'] == "EUR") ? "active" : "";
 ?>
 
 
