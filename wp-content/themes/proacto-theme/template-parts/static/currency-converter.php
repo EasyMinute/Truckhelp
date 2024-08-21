@@ -4,11 +4,6 @@ $user_ip = $_SERVER['REMOTE_ADDR'];
 
 // Call the geolocation API to get the user's country
 $geolocation_data = @file_get_contents("https://ipinfo.io/{$user_ip}/json");
-?>
-<pre>
-    <?php var_dump($geolocation_data); ?>
-</pre>
-<?php
 $geolocation_data = json_decode($geolocation_data, true);
 
 // Determine the country and set the default currency
