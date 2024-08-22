@@ -35,7 +35,7 @@ $uah_active = (!isset($_GET['currency']) && $default_currency === 'UAH') || (iss
 $eur_active = (!isset($_GET['currency']) && $default_currency === 'EUR') || (isset($_GET['currency']) && $_GET['currency'] == "EUR") ? "active" : "";
 ?>
 
-
+<?php if (false): ?>
 <div class="currency-converter">
     <a href="<?= $uah_url ?>" class="body body-s regular currency-converter__button <?= $uah_active ?>" data-target="UAH">
 		<?= __('ГРН ₴', 'proacto') ?>
@@ -44,3 +44,4 @@ $eur_active = (!isset($_GET['currency']) && $default_currency === 'EUR') || (iss
 		<?= __('EUR €', 'proacto') ?>
     </a>
 </div>
+<?php endif; ?>
