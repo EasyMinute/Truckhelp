@@ -21,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 $img_name = 'bacs.svg';
 if ($gateway->id == 'liqpay-webplus') {
 	$img_name = 'liqpay.svg';
-} elseif ($gateway->id == 'stripe_cc') {
+} elseif ($gateway->id == 'stripe_cc' || $gateway->id == 'eh_stripe_checkout') {
 	$img_name = 'stripe.svg';
 } elseif ($gateway->id == 'ppcp') {
 	$img_name = 'paypal.svg';

@@ -129,6 +129,10 @@
 
 
           li {
+            &.wpml-ls-current-language {
+              order: -1;
+            }
+
             .wpml-ls-link {
               font-family: Roboto, sans-serif;
               font-size: 16px;

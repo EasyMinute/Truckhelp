@@ -3402,6 +3402,11 @@ ul.payment_methods li[class*=payment_method_stripe_]:nth-child(n+2) {
       -ms-flex-direction: column;
           flex-direction: column;
 }
+.header .header__wrap .lang-switch .wpml-ls-legacy-list-horizontal ul li.wpml-ls-current-language {
+  -webkit-box-ordinal-group: 0;
+      -ms-flex-order: -1;
+          order: -1;
+}
 .header .header__wrap .lang-switch .wpml-ls-legacy-list-horizontal ul li .wpml-ls-link {
   font-family: Roboto, sans-serif;
   font-size: 16px;
