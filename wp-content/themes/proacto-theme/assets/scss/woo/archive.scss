@@ -144,6 +144,9 @@
   &__texts {
     background-color: $primary-70;
     padding: 16px 16px 24px 16px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
   }
 
   &__title {
@@ -158,6 +161,8 @@
     width: 100%;
     justify-content: space-between;
     align-items: flex-end;
+    flex-wrap: wrap;
+    margin: auto 0 0 0;
 
 
     .added_to_cart {
