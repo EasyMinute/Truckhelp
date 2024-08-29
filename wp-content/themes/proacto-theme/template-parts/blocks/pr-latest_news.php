@@ -16,6 +16,7 @@ if ($latest_news['choose'] && !empty($latest_news['news'])){
 	$posts = get_posts(array(
 		'post_type' => 'post',
 		'numberposts' => 4,
+		'suppress_filters' => false
 	));
 }
 

@@ -5,7 +5,8 @@ $options = get_field('service_centre');
 $posts = get_posts([
 	'numberposts' => -1,
 	'post_type' => 'service_centres',
-	'status' => 'publish'
+	'status' => 'publish',
+    'suppress_filters' => false
 ]);
 $location = $options['map'];
 $curr_id = get_the_ID();

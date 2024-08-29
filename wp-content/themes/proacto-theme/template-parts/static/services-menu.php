@@ -6,7 +6,8 @@ $posts = get_posts(array(
 	'numberposts' => -1,
 	'status' => 'publish',
 	'orderby' => 'date',
-	'order' => 'DESC'
+	'order' => 'DESC',
+	'suppress_filters' => false
 ));
 
 $curr_id = get_the_ID();

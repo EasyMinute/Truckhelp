@@ -17,6 +17,7 @@ if ($services_grid['choose'] && !empty($services_grid['services'])){
 	$posts = get_posts(array(
 		'post_type' => 'services',
 		'numberposts' => 8,
+		'suppress_filters' => false
 	));
 }
 

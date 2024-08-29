@@ -6,6 +6,7 @@ $posts = get_posts(array(
 	'order' => "DESC",
 	'orderby' => 'date',
 	'status' => 'publish',
+	'suppress_filters' => false
 ));
 
 ?>

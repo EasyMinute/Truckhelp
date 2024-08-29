@@ -16,14 +16,16 @@ $services = get_posts(array(
 	'numberposts' => 8,
 	'status' => 'publish',
 	'orderby' => 'date',
-	'order' => 'DESC'
+	'order' => 'DESC',
+	'suppress_filters' => false
 ));
 $service_centres = get_posts(array(
 	'post_type' => 'service_centres',
 	'numberposts' => 8,
 	'status' => 'publish',
 	'orderby' => 'date',
-	'order' => 'DESC'
+	'order' => 'DESC',
+	'suppress_filters' => false
 ));
 ?>
 <?php get_template_part('template-parts/popups/added_to_cart'); ?>

@@ -18,6 +18,7 @@ if ($map_section['choose'] && !empty($map_section['posts'])){
 	$posts = get_posts(array(
 		'post_type' => 'service_centres',
 		'numberposts' => 3,
+		'suppress_filters' => false
 	));
 }
 

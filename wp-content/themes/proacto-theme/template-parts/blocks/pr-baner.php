@@ -17,6 +17,7 @@ if ($baner['choose_centres'] && !empty($baner['service_centres'])){
     $posts = get_posts(array(
        'post_type' => 'service_centres',
        'numberposts' => 3,
+       'suppress_filters' => false
     ));
 }
 
