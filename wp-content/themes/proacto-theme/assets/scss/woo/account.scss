@@ -112,6 +112,9 @@
 
           .button {
             color: $white;
+            display: inline-block;
+            margin-bottom: 8px;
+            margin-right: 4px;
           }
         }
       }
@@ -198,5 +201,54 @@
   padding: 64px 0;
   @media screen and (max-width: 980px){
     padding: 40px 0;
+  }
+}
+
+
+.order_review__pay {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 64px 0;
+  @media screen and (max-width: 980px){
+    padding: 32px 0;
+  }
+
+  .shop_table {
+    width: 100%;
+    max-width: calc(50% - 16px);
+    border-top: solid 1px $primary-70;
+    border-bottom: solid 1px $primary-70;
+    border-left: solid 16px $primary-70;
+    border-right: solid 16px $primary-70;
+    padding: 0 12px;
+    border-radius: 12px;
+    overflow: hidden;
+    border-collapse: collapse;
+    background-color: $primary-70;
+    @media screen and (max-width: 980px){
+      max-width: 100%;
+      margin-bottom: 24px;
+    }
+
+    th, td {
+      padding: 12px 4px;
+      border-top: solid 1px $primary-30;
+      border-bottom: solid 1px $primary-30;
+      font-family: Roboto, sans-serif;
+      font-style: normal;
+      color: $primary-10;
+      font-weight: 400;
+      vertical-align: middle;
+    }
+  }
+
+  &-methods {
+    width: 100%;
+    max-width: calc(50% - 16px);
+    @media screen and (max-width: 980px){
+      max-width: 100%;
+    }
   }
 }
