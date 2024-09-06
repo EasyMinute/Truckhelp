@@ -9,7 +9,27 @@ if ( ! empty( $block['align'] ) ) {
 }
 
 $baner = get_field('baner');
-$bg = esc_url($baner['background']['url']);
+
+$file_id = $baner['background']['id'];
+
+// Check if file exists
+if( $file_id ) {
+	// Get the MIME type of the file
+	$mime_type = get_post_mime_type( $file_id );
+
+	// Check if it's an image
+	if( strpos( $mime_type, 'image' ) !== false ) {
+		$img_url = $baner['background']['url'];
+		$img_alt = $baner['background']['alt'];
+	}
+	// Check if it's a video
+    elseif( strpos( $mime_type, 'video' ) !== false ) {
+	    $mime_type = get_post_mime_type( $file_id );
+	    // Get the file URL
+	    $file_url = wp_get_attachment_url( $file_id );
+	}
+}
+//$bg = esc_url($baner['background']['url']);
 
 if ($baner['choose_centres'] && !empty($baner['service_centres'])){
     $posts = $baner['service_centres'];
@@ -23,7 +43,14 @@ if ($baner['choose_centres'] && !empty($baner['service_centres'])){
 
 ?>
 
-<section class="<?php echo  esc_attr($className)?>" style="background-image: url(<?= $bg ?>)">
+<section class="<?php echo  esc_attr($className)?>">
+    <?php if( strpos( $mime_type, 'image' ) !== false ) : ?>
+        <img src="<?= esc_url( $img_url ) ?>" alt="<?= esc_attr($img_alt) ?>" class="baner__bg">
+    <?php elseif( strpos( $mime_type, 'video' ) !== false ) : ?>
+        <video class="baner__bg" muted="" autoplay="" loop="" preload="auto">
+            <source src="<?= esc_url( $file_url ) ?>" type="<?= esc_attr( $mime_type ) ?>">
+        </video>
+    <?php endif; ?>
 	<div class="container">
 		<div class="baner__wrap">
             <div class="baner__texts">
