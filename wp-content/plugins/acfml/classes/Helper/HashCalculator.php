@@ -16,7 +16,7 @@ class HashCalculator {
 
 		if ( is_string( $value ) ) {
 			return self::hash( $value );
-		} elseif ( is_int( $value ) ) {
+		} elseif ( is_numeric( $value ) ) {
 			return self::hash( (string) $value );
 		} elseif ( is_array( $value ) && self::getID( $value ) ) {
 			return self::hash( (string) self::getID( $value ) );

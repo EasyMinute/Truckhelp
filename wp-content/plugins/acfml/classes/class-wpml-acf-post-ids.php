@@ -16,7 +16,7 @@ class WPML_ACF_Post_Ids implements WPML_ACF_Convertable {
 	/**
 	 * @param WPML_ACF_Field $acf_field
 	 *
-	 * @return string[]|string
+	 * @return string[]|string|null|null[]
 	 */
 	private function convertSerializationLayer( WPML_ACF_Field $acf_field ) {
 		$came_serialized = is_serialized( $acf_field->meta_value );
@@ -33,15 +33,15 @@ class WPML_ACF_Post_Ids implements WPML_ACF_Convertable {
 	}
 
 	/**
-	 * @param array|string|int $mixedIds
+	 * @param array|string|int|null|numeric-string $mixedIds
 	 * @param WPML_ACF_Field $acf_field
 	 *
-	 * @return string[]|string
+	 * @return string[]|string|null|numeric-string
 	 */
 	private function convertStringOrArrayOfStringsLayer( $mixedIds, WPML_ACF_Field $acf_field ) {
 
 		if ( is_array( $mixedIds ) ) {
-			return array_map( function ( string $originalId ) use ( $acf_field ) {
+			return array_map( function ( $originalId ) use ( $acf_field ) {
 				return $this->convertOriginalIdToTranslationId( $originalId, $acf_field );
 			}, $mixedIds );
 		}
@@ -49,7 +49,21 @@ class WPML_ACF_Post_Ids implements WPML_ACF_Convertable {
 		return $this->convertOriginalIdToTranslationId( $mixedIds, $acf_field );
 	}
 
-	private function convertOriginalIdToTranslationId( string $originalId, WPML_ACF_Field $acf_field ): string {
+	/**
+	 * @param string|null|numeric-string $originalId
+	 * @param WPML_ACF_Field $acf_field
+	 *
+	 * @return string|null|numeric-string
+	 */
+	private function convertOriginalIdToTranslationId( $originalId, WPML_ACF_Field $acf_field ) {
+		if( is_null( $originalId ) ) {
+			return null;
+		}
+
+		if ( ! is_numeric( $originalId ) ) {
+			return $originalId;
+		}
+
 		return (string) ( new WPML_ACF_Post_Id( $originalId, $acf_field ) )
 			->convert()->id;
 	}
