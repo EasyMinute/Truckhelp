@@ -84,11 +84,13 @@ if ( post_password_required() ) {
                                     <?= __('сумісність', 'proacto') ?>
                                 </span>
                             </li>
-                            <?php foreach ($options['tech_details'] as $item) : ?>
-                                <li class="body body-s regular">
-                                    <?= $item['text'] ?>
-                                </li>
-                            <?php endforeach; ?>
+                            <?php if (!empty($options['tech_details'])): ?>
+                                <?php foreach ($options['tech_details'] as $item) : ?>
+                                    <li class="body body-s regular">
+                                        <?= $item['text'] ?>
+                                    </li>
+                                <?php endforeach; ?>
+                            <?php endif; ?>
                         </ul>
                     <?php endif; ?>
                 </div>
