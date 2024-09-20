@@ -24,7 +24,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
         <div class="pr-checkout__head">
             <h1 class="headline headline-h3 bold">
-                <?= __('Оформлення замовлення') ?>
+                <?= __('Оформлення замовлення', 'proacto') ?>
             </h1>
         </div>
 
