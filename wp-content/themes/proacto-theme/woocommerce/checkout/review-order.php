@@ -55,6 +55,16 @@ defined( 'ABSPATH' ) || exit;
 
 		<?php do_action( 'woocommerce_review_order_before_order_total' ); ?>
 
+
+        <?php if(WC()->cart->get_fees()): ?>
+            <?php foreach ( WC()->cart->get_fees() as $fee ) : ?>
+                <div class="order-total subtotal">
+                    <p class="order-total__title body body-m medium"><?php echo esc_html( $fee->name ); ?></p>
+                    <span class="order-total__price headline body-m bold"><?php wc_cart_totals_fee_html( $fee ); ?></span>
+                </div>
+            <?php endforeach; ?>
+        <?php endif; ?>
+
 		<div class="order-total">
 			<p class="order-total__title body body-xl semibold"><?php esc_html_e( 'Total', 'woocommerce' ); ?></p>
 			<span class="order-total__price headline headline-h6 bold"><?php wc_cart_totals_order_total_html(); ?></span>
