@@ -55,6 +55,21 @@ defined( 'ABSPATH' ) || exit;
 
 		<?php do_action( 'woocommerce_review_order_before_order_total' ); ?>
 
+		<?php if ( wc_tax_enabled() && ! WC()->cart->display_prices_including_tax() ) : ?>
+			<?php if ( 'itemized' === get_option( 'woocommerce_tax_total_display' ) ) : ?>
+				<?php foreach ( WC()->cart->get_tax_totals() as $code => $tax ) : // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited ?>
+                    <div class="order-total subtotal">
+                        <p class="order-total__title body body-m medium"><?php echo esc_html( $tax->label ); ?></p>
+                        <span class="order-total__price headline body-m bold"><?php echo wp_kses_post( $tax->formatted_amount ); ?></span>
+                    </div>
+				<?php endforeach; ?>
+			<?php else : ?>
+                <div class="order-total subtotal">
+                    <p class="order-total__title body body-m medium"><?php echo esc_html( WC()->countries->tax_or_vat() ); ?></p>
+                    <span class="order-total__price headline body-m bold"><?php wc_cart_totals_taxes_total_html(); ?></span>
+                </div>
+			<?php endif; ?>
+		<?php endif; ?>
 
         <?php if(WC()->cart->get_fees()): ?>
             <?php foreach ( WC()->cart->get_fees() as $fee ) : ?>
