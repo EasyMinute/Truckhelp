@@ -334,6 +334,13 @@ ul.payment_methods li[class*=payment_method_stripe_]:nth-child(n+2) {
 }
 
 .select2-container {
+
+  &--open {
+    .select2-selection {
+      border-radius: 16px 16px 0 0;
+    }
+  }
+
   .select2-dropdown {
     background-color: $primary-70;
 
@@ -361,4 +368,17 @@ ul.payment_methods li[class*=payment_method_stripe_]:nth-child(n+2) {
       }
     }
   }
+}
+
+.select2-container--default.select2-container--open.select2-container--below .select2-selection--multiple,
+.select2-container--default.select2-container--open.select2-container--below .select2-selection--single {
+  border-radius: 16px 16px 0 0 !important;
+}
+.select2-container--default.select2-container--open.select2-container--above .select2-selection--multiple,
+.select2-container--default.select2-container--open.select2-container--above .select2-selection--single {
+  border-radius: 0 0 16px 16px !important;
+}
+
+.select2-container--default .select2-search--dropdown .select2-search__field {
+  padding: 4px 12px;
 }
