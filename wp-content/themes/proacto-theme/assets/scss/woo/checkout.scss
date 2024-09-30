@@ -59,6 +59,38 @@
           max-width: calc(50% - 8px);
           margin-bottom: 16px;
 
+          &#billing_country_field{
+            max-width: 100%;
+
+            label {
+              margin-bottom: 12px;
+              display: block;
+              font-family: Roboto, sans-serif;
+              font-style: normal;
+              //color: $primary-10;
+            }
+
+
+            .select2-container {
+              .select2-selection {
+                background: $primary-70;
+                border-radius: 16px;
+                height: auto;
+                padding: 6px 0;
+
+                .select2-selection__rendered {
+                  font-family: Roboto, sans-serif;
+                  font-style: normal;
+                  color: $primary-10;
+                }
+
+                .select2-selection__arrow {
+                  height: 100%;
+                }
+              }
+            }
+          }
+
           @media screen and (max-width: 980px){
             max-width: 100%;
           }
@@ -297,6 +329,36 @@ ul.payment_methods li[class*=payment_method_stripe_]:nth-child(n+2) {
 
     span {
       font-weight: 400;
+    }
+  }
+}
+
+.select2-container {
+  .select2-dropdown {
+    background-color: $primary-70;
+
+    .select2-search {
+
+      color: $primary-10;
+    }
+
+    .select2-results {
+      .select2-results__options {
+        .select2-results__option{
+          font-family: Roboto, sans-serif;
+          font-style: normal;
+          color: $primary-10;
+
+          &--highlighted {
+            background-color: $accent-50;
+          }
+
+          &[data-selected=true] {
+            background-color: $accent-70;
+          }
+        }
+
+      }
     }
   }
 }

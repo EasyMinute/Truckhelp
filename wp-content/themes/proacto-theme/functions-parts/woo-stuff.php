@@ -129,7 +129,9 @@ add_filter( 'woocommerce_checkout_fields', 'customize_checkout_fields' );
 
 function customize_checkout_fields( $fields ) {
 	// Unset all fields except surname, name, telephone, and email
+	$fields['billing']['billing_country']['priority'] = 5;
 	$fields['billing'] = array(
+		'billing_country' => $fields['billing']['billing_country'],
 		'billing_last_name' => array(
 			'label'       => false,
             'placeholder' => __('Ваше прізвище*', 'proacto'),

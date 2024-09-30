@@ -17,6 +17,7 @@ const links_swiper = new Swiper('.links_slider.swiper', {
     direction: 'horizontal',
     loop: false,
     slidesPerView: 1,
+    initialSlide: 1,
     spaceBetween: 10,
     breakpoints: {
 

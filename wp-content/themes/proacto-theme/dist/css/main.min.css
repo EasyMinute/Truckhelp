@@ -2728,6 +2728,29 @@ main.single-post {
   max-width: calc(50% - 8px);
   margin-bottom: 16px;
 }
+.pr-checkout__fields-contact .woocommerce-billing-fields__field-wrapper .form-row#billing_country_field {
+  max-width: 100%;
+}
+.pr-checkout__fields-contact .woocommerce-billing-fields__field-wrapper .form-row#billing_country_field label {
+  margin-bottom: 12px;
+  display: block;
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+}
+.pr-checkout__fields-contact .woocommerce-billing-fields__field-wrapper .form-row#billing_country_field .select2-container .select2-selection {
+  background: #111010;
+  border-radius: 16px;
+  height: auto;
+  padding: 6px 0;
+}
+.pr-checkout__fields-contact .woocommerce-billing-fields__field-wrapper .form-row#billing_country_field .select2-container .select2-selection .select2-selection__rendered {
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  color: #D3D0D0;
+}
+.pr-checkout__fields-contact .woocommerce-billing-fields__field-wrapper .form-row#billing_country_field .select2-container .select2-selection .select2-selection__arrow {
+  height: 100%;
+}
 @media screen and (max-width: 980px) {
   .pr-checkout__fields-contact .woocommerce-billing-fields__field-wrapper .form-row {
     max-width: 100%;
@@ -2966,6 +2989,24 @@ ul.payment_methods li[class*=payment_method_stripe_]:nth-child(n+2) {
 }
 .bacs_table li span {
   font-weight: 400;
+}
+
+.select2-container .select2-dropdown {
+  background-color: #111010;
+}
+.select2-container .select2-dropdown .select2-search {
+  color: #D3D0D0;
+}
+.select2-container .select2-dropdown .select2-results .select2-results__options .select2-results__option {
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  color: #D3D0D0;
+}
+.select2-container .select2-dropdown .select2-results .select2-results__options .select2-results__option--highlighted {
+  background-color: #B52929;
+}
+.select2-container .select2-dropdown .select2-results .select2-results__options .select2-results__option[data-selected=true] {
+  background-color: #6D1919;
 }
 
 .success-order {
