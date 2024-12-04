@@ -93,7 +93,7 @@
       -ms-transform: translate(50%, -75%) rotate(225deg);
           transform: translate(50%, -75%) rotate(225deg);
 }
-.seo_text .text-button .close {
+.seo_text .text-button .seo-close {
   display: none;
 }
 .seo_text .text-button.opened:after {
