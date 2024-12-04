@@ -22,7 +22,7 @@ $seo_text = get_field('seo_text');
 		</div>
 		<button class="seo_text__button text-button seo_text__switcher">
 			<span class="open"><?= __('Показати більше', 'proacto') ?></span>
-			<span class="close"><?= __('Сховати', 'proacto') ?></span>
+			<span class="seo-close"><?= __('Сховати', 'proacto') ?></span>
 		</button>
 	</div>
 </section>
