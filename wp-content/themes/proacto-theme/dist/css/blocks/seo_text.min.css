@@ -101,7 +101,7 @@
       -ms-transform: translate(50%, -50%) rotate(45deg);
           transform: translate(50%, -50%) rotate(45deg);
 }
-.seo_text .text-button.opened .close {
+.seo_text .text-button.opened .seo-close {
   display: block;
 }
 .seo_text .text-button.opened .open {
