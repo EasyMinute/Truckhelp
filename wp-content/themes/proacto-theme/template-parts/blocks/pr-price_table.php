@@ -21,7 +21,9 @@ $price_table = get_field('price_table');
 						<?= $item['title'] ?>
 					</p>
 					<p class="price_value">
-						<span class="body body-s medium"><?= __('від ', 'proacto') ?></span>
+                        <?php if (isset($item['prefix']) && !empty($item['prefix'])): ?>
+						    <span class="body body-s medium"><?= $item['prefix'] ?></span>
+                        <?php endif; ?>
 						<span class="body body-xl bold"><?= $item['price'] ?></span>
 					</p>
 				</li>
